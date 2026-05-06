@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.1.1",
@@ -31,7 +32,18 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.0",
+    "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write"
+    ],
+    "**/*.{json,css,md,mdx}": [
+      "prettier --write"
+    ]
   }
 }
