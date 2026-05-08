@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   experimental: {
     authInterrupts: true,
   },
+  allowedDevOrigins: ['172.20.10.7'],
   images: {
     remotePatterns: [
       {
