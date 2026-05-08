@@ -110,7 +110,7 @@ export default function BadgeForm({ badge, update }: Props) {
       </Field>
 
       <Button
-        className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-xl text-sm mt-2 transition-colors h-11"
+        className="w-full h-[56px] bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-full text-sm mt-2 transition-colors h-11"
         disabled
       >
         Generate and share

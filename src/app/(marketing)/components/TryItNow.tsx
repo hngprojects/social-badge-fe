@@ -25,11 +25,11 @@ export default function TryItNow() {
   };
 
   return (
-    <section className="w-full max-w-300 mx-auto md:h-[944px]">
+    <section className="w-full max-w-300 mx-auto md:h-[944px] text-center md:text-left">
       {/* Label */}
       <div className="flex items-center gap-2 mb-4">
         <div className="w-2 h-2 bg-orange-600 rounded "></div>
-        <p className="text-black/60 text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider">
+        <p className="text-black/60 text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left">
           Try it now
         </p>
       </div>
@@ -41,7 +41,7 @@ export default function TryItNow() {
 
       <div className="flex flex-col md:flex-row gap-8 items-start mt-17.5 md:h-[767px]">
         <div className="w-full md:[576px] h-full">
-          <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-60 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.12)]">
+          <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-75 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.12)]">
             <BadgePreview ref={previewRef} badge={badge} />
           </div>
         </div>
