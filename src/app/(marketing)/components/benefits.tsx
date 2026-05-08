@@ -54,9 +54,9 @@ const BenefitSection = () => {
             </h2>
 
             {/* Desktop Headline */}
-            <h2 className="hidden lg:block text-5xl md:text-6xl font-bold text-[#333] leading-tight">
+            <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#333] leading-tight">
               Why would they <br />{' '}
-              <span className="italic text-[#FF4F11] font-serif font-light">share?</span>
+              <span className="italic text-[#FF4F11]  font-sans font-bold">share?</span>
             </h2>
           </header>
 
@@ -66,25 +66,20 @@ const BenefitSection = () => {
               // If desktopTitle is empty, we only show this on mobile
               <div
                 key={index}
-                className={`flex items-start gap-4 p-5 md:p-6 rounded-xl border border-gray-100 bg-white shadow-sm ${!benefit.desktopTitle && 'lg:hidden'}`}
+                className={`flex items-start gap-4 p-5 md:p-6 rounded-xl border border-[#EAEAE6] bg-white  ${!benefit.desktopTitle && 'lg:hidden'}`}
               >
                 {/* Custom Checkmark Icon */}
                 <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="text-white"
-                  >
-                    <path
-                      d="M16.6666 5L7.49992 14.1667L3.33325 10"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center shadow-lg shadow-orange-100">
+                    <div className="relative w-[24px] h-[24px] md:w-[28px] md:h-[28px]">
+                      <Image
+                        src="/assets/icons/Icon-Button.svg"
+                        alt="Checkmark"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-1">
