@@ -89,15 +89,18 @@ const templates = [
 const Templates = () => {
   return (
     <div className="py-6 my-4 relative w-full max-w-360 flex justify-center max-md:items-center flex-col">
+      {/* Section category */}
       <div className="text-black/60 uppercase text-[11px] tracking-[1px] flex items-center gap-2">
         <span className="inline-block bg-primary rounded-full w-2 h-2" />
         <span>Templates</span>
       </div>
 
+      {/* Section title */}
       <h1 className="font-semibold text-[#525252] text-[clamp(2rem,6vw,4.5rem)] my-4 text-center md:text-left leading-[0.95]">
         Browse Template <span className="font-fraunces text-primary italic">section</span>
       </h1>
 
+      {/* Cards stack */}
       <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:grid-cols-4 gap-6 mb-3">
         {templates.map((template, index) => (
           <div
@@ -121,7 +124,9 @@ const Templates = () => {
                 className={`object-contain ${template.hasShadow ? 'p-0 pt-2' : 'p-4'}`}
               />
             </div>
-            <div className="bg-[#EAEAE6] flex flex-col flex-1 justify-between">
+
+            {/* Bottom half */}
+            <div className="bg-[#F4F4F2] flex flex-col flex-1 justify-between">
               <div className="flex flex-col gap-1 p-4">
                 <span className="uppercase text-[10px] tracking-[1.2px] text-primary">
                   {template.type}
