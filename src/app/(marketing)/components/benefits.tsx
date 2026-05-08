@@ -42,7 +42,7 @@ const BenefitSection = () => {
           <header className="space-y-4 text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-[#FF4F11]" />
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#00000099] font-fraunces">
                 Benefits
               </span>
             </div>
@@ -54,9 +54,9 @@ const BenefitSection = () => {
             </h2>
 
             {/* Desktop Headline */}
-            <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#333] leading-tight">
+            <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#333] leading-tight font sans">
               Why would they <br />{' '}
-              <span className="italic text-[#FF4F11]  font-sans font-bold">share?</span>
+              <span className="italic text-[#FF4F11]  font-fraunces font-bold">share?</span>
             </h2>
           </header>
 
