@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const BENEFITS_DATA = [
@@ -33,7 +34,7 @@ const BENEFITS_DATA = [
 
 const BenefitSection = () => {
   return (
-    <section className="py-12 px-6 md:py-24  mx-auto font-sans ">
+    <section className="py-12 px-6 md:py-24  mx-auto font-sans  bg-[#F9F9F9]">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         {/* RIGHT SIDE*/}
         <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
@@ -105,13 +106,18 @@ const BenefitSection = () => {
         </div>
 
         {/* LEFT SIDE */}
-        <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 mt-8 lg:mt-0">
-          <div className="relative w-full max-w-[500px]">
-            {/* Actual Card Placeholder */}
-            <div className="rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500">
-              {/* Use your Card Image here */}
-              <div className="bg-gray-50 aspect-[4/5] lg:aspect-square flex items-center justify-center border border-gray-200">
-                <p className="text-gray-400">Card xxx</p>
+        <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0">
+          <div className="relative w-full max-w-[640px]">
+            <div className="relative rounded-3xl transition-transform hover:scale-[1.02] duration-500 h-[320px] md:h-auto md:aspect-square p-1 md:p-6 overflow-hidden">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/assets/landing-page/benefits-cards.jpg"
+                  alt="Social badges showing user profiles"
+                  fill
+                  priority
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+                />
               </div>
             </div>
           </div>
