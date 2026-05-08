@@ -84,13 +84,13 @@ const BenefitSection = () => {
 
                 <div className="space-y-1">
                   {/* Responsive Title: Swaps content based on screen size */}
-                  <h3 className="text-lg md:text-xl font-bold text-[#1A1A1A]">
+                  <h3 className="text-lg md:text-xl font-bold text-[#0A0A0A] font-fraunces">
                     <span className="lg:hidden">{benefit.mobileTitle}</span>
                     <span className="hidden lg:inline">{benefit.desktopTitle}</span>
                   </h3>
 
                   {/* Responsive Description: Swaps content based on screen size */}
-                  <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                  <p className="text-[#797074] text-sm md:text-base leading-relaxed font-sans">
                     <span className="lg:hidden">{benefit.mobileDesc}</span>
                     <span className="hidden lg:inline">{benefit.desktopDesc}</span>
                   </p>
