@@ -21,7 +21,7 @@ const BENEFITS_DATA = [
     desktopDesc: 'Speaker badges, finalist badges, member badges — built-in social proof.',
     mobileTitle: 'From idea to live badge in under five minutes',
     mobileDesc:
-      'No back and forth. No waiting. By the time you finish your tea, your badge campaign is live.',
+      'No back and forth. No waiting. By the time you finish your tea, your badge campaign is live and your link is ready to share. It’s that simple.',
   },
   {
     mobileTitle: 'No stress for your promoter',
