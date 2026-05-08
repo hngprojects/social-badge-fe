@@ -34,7 +34,7 @@ const BENEFITS_DATA = [
 
 const BenefitSection = () => {
   return (
-    <section className="py-12 px-6 md:py-24  mx-auto font-sans  bg-[#F9F9F9]">
+    <section className="py-12 md:px-6 md:py-24  mx-auto font-sans  bg-[#F9F9F9]">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         {/* RIGHT SIDE*/}
         <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
@@ -66,7 +66,7 @@ const BenefitSection = () => {
               // If desktopTitle is empty, we only show this on mobile
               <div
                 key={index}
-                className={`flex items-start gap-4 p-5 md:p-6 rounded-xl border border-[#EAEAE6] bg-white  ${!benefit.desktopTitle && 'lg:hidden'}`}
+                className={`flex items-start gap-4 p-2 md:p-6 rounded-xl border border-[#EAEAE6] bg-white  ${!benefit.desktopTitle && 'lg:hidden'}`}
               >
                 {/* Custom Checkmark Icon */}
                 <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center">
