@@ -48,9 +48,9 @@ const BenefitSection = () => {
             </div>
 
             {/* Mobile Headline */}
-            <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#333] leading-tight">
-              More <span className="italic text-[#FF4F11]">reach.</span> Zero ad spend. No designer
-              needed.
+            <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#333] leading-tight font sans">
+              More <span className="italic text-[#FF4F11]  font-fraunces font-bold">reach.</span>{' '}
+              Zero ad spend. No designer needed.
             </h2>
 
             {/* Desktop Headline */}
