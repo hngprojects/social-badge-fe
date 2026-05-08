@@ -16,7 +16,7 @@ const ShareYourBadge = () => {
   };
 
   return (
-    <div className="bg-white flex flex-col items-center gap-5 sm:gap-[24px] w-full max-w-full sm:max-w-[465.6px] mx-auto shadow-[0px_20px_40px_rgba(0,0,0,0.06)] relative border border-gray-100 rounded-[24px] sm:rounded-[32px]">
+    <div className="bg-white flex flex-col items-center gap-5 sm:gap-6 w-full max-w-full sm:max-w-[465.6px] mx-auto shadow-[0px_20px_40px_rgba(0,0,0,0.06)] relative border border-gray-100 rounded-[24px] sm:rounded-[32px]">
       <div className="flex flex-col gap-1 w-full text-center">
         <h3 className="font-fraunces font-bold text-[#0a0a0a] text-[22px] sm:text-[28px] leading-tight">
           Share your Badge
@@ -27,19 +27,19 @@ const ShareYourBadge = () => {
       <div className="flex flex-col gap-4 sm:gap-5 w-full">
         {/* Link & Copy */}
         <div className="flex items-center gap-2">
-          <div className="bg-[#f4f4f2] border border-black/5 flex-1 px-4 py-[12px] sm:py-[14px] rounded-xl overflow-hidden">
+          <div className="bg-[#f4f4f2] border border-black/5 flex-1 px-4 py-3 sm:py-3.5 rounded-xl overflow-hidden">
             <p className="font-mono text-[#0a0a0a] text-xs truncate">badge.build/b/devcon-2026</p>
           </div>
           <button
             onClick={handleCopy}
-            className="bg-[#0a0a0a] hover:bg-[#333] transition-colors flex items-center justify-center py-[12px] sm:py-[14px] px-5 sm:px-6 rounded-xl text-white font-bold text-[10px] tracking-widest uppercase shrink-0"
+            className="bg-[#0a0a0a] hover:bg-[#333] transition-colors flex items-center justify-center py-3 sm:py-3.5 px-5 sm:px-6 rounded-xl text-white font-bold text-[10px] tracking-widest uppercase shrink-0"
           >
             {copied ? <Check size={14} /> : 'COPY'}
           </button>
         </div>
 
         {/* QR Code Placeholder */}
-        <div className="bg-[#eaeae6] border border-black/5 flex flex-col items-center justify-center p-5 rounded-[20px] sm:rounded-[24px] w-[100px] sm:w-[120px] mx-auto aspect-square gap-2 sm:gap-3 hover:scale-105 transition-transform cursor-pointer">
+        <div className="bg-[#eaeae6] border border-black/5 flex flex-col items-center justify-center p-5 rounded-[20px] sm:rounded-[24px] w-25 sm:w-30 mx-auto aspect-square gap-2 sm:gap-3 hover:scale-105 transition-transform cursor-pointer">
           <QrCode className="text-[#8a8a85]" size={30} />
           <p className="font-mono text-[#8a8a85] text-[9px] tracking-[1.5px] uppercase font-bold">
             QR CODE
@@ -53,8 +53,8 @@ const ShareYourBadge = () => {
           </p>
           <div className="bg-[#f4f4f2] border border-black/5 p-4 sm:p-5 rounded-[14px] sm:rounded-[16px]">
             <p className="text-[#1a1c1d] text-[13px] leading-relaxed">
-              Thrilled to announce I'll be speaking at the Global Innovation Summit 2024! 🚀 Can't
-              wait to share insights on the future of SocialBadge. #GIS2024 #SocialBadge
+              Thrilled to announce I&apos;ll be speaking at the Global Innovation Summit 2024! 🚀
+              Can&apos;t wait to share insights on the future of SocialBadge. #GIS2024 #SocialBadge
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ const ShareYourBadge = () => {
               className={`flex items-center justify-center rounded-full transition-all duration-300 shadow-md ${
                 activeApp === 'instagram'
                   ? 'w-14 h-14 bg-[#ff4f1f]'
-                  : 'w-11 h-11 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'
+                  : 'w-11 h-11 bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'
               }`}
             >
               <Image
@@ -195,7 +195,7 @@ const ShareYourBadge = () => {
             className={`flex flex-col items-center justify-center gap-3 cursor-pointer flex-1 py-4 rounded-[20px] transition-all duration-300 ${activeApp === 'instagram' ? 'bg-[#ff4f1f] shadow-md' : 'hover:bg-gray-50'}`}
           >
             <div
-              className={`flex items-center justify-center w-12 h-12 rounded-full ${activeApp === 'instagram' ? '' : 'bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'}`}
+              className={`flex items-center justify-center w-12 h-12 rounded-full ${activeApp === 'instagram' ? '' : 'bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'}`}
             >
               <Image
                 src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1765716432/icon-instagram_hnn5nq.svg"
@@ -213,10 +213,10 @@ const ShareYourBadge = () => {
           </div>
         </div>
 
-        <button className="bg-[#ff4f1f] hover:bg-[#e54519] transition-colors text-white w-full py-[16px] sm:py-[18px] rounded-[14px] sm:rounded-[16px] font-bold text-sm flex items-center justify-center gap-2 group shadow-md">
+        <button className="bg-[#ff4f1f] hover:bg-[#e54519] transition-colors text-white w-full py-4 sm:py-4.5 rounded-[14px] sm:rounded-[16px] font-bold text-sm flex items-center justify-center gap-2 group shadow-md">
           <span>Done</span>
-          <div className="w-[18px] h-[18px] bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-            <span className="text-white text-[10px] leading-none mb-[1px]">↗</span>
+          <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span className="text-white text-[10px] leading-none mb-px">↗</span>
           </div>
         </button>
       </div>
@@ -262,25 +262,25 @@ const FEATURES = [
   },
 ];
 
-export default function FeatureShowcase() {
+export default function Feature() {
   const [activeId, setActiveId] = useState('01');
   const activeFeature = FEATURES.find((f) => f.id === activeId) || FEATURES[0];
 
   return (
     <section className="w-full py-12 sm:py-16 lg:py-24 bg-[#fafafa] overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 md:px-[64px] max-w-[1440px]">
-        <div className="w-full max-w-[1312px] mx-auto">
+      <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-16 max-w-360">
+        <div className="w-full max-w-328 mx-auto">
           {/* ── Header ── */}
-          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-[64px] max-w-2xl">
+          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 max-w-2xl">
             <div className="flex items-center gap-3">
               <div className="bg-[#ff4f1f] w-2 h-2 rounded-sm" />
               <span className="text-[11px] text-gray-400 tracking-[1.54px] uppercase font-bold">
                 FOR EVENT ORGANIZERS
               </span>
             </div>
-            <h2 className="font-fraunces font-semibold text-[32px] sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-[74px] tracking-[-0.65px] text-[#525252]">
+            <h2 className="font-fraunces font-semibold text-[32px] sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-18.5 tracking-[-0.65px] text-[#525252]">
               Pre-event hype <br className="hidden sm:block" />
-              shouldn't be <span className="italic text-[#ff4f1f]">this</span> hard.
+              shouldn&apos;t be <span className="italic text-[#ff4f1f]">this</span> hard.
             </h2>
           </div>
 
@@ -289,12 +289,12 @@ export default function FeatureShowcase() {
                Desktop (lg+) : left column (steps) | right column (visual)
           ── */}
           <div
-            className={`flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 lg:gap-0 w-full transition-all duration-500 ${
-              activeId === '02' ? 'lg:items-center' : 'lg:items-start'
+            className={`flex flex-col min-[900px]:flex-row justify-between gap-8 min-[900px]:gap-12 lg:gap-0 w-full transition-all duration-500 ${
+              activeId === '02' ? 'min-[900px]:items-center' : 'min-[900px]:items-start'
             }`}
           >
             {/* ── LEFT COLUMN: Step Menu ── */}
-            <div className="flex flex-col w-full lg:w-[592px] shrink-0 p-0 items-stretch border-l border-[#e4beb1]/30">
+            <div className="flex flex-col w-full min-[900px]:w-[450px] lg:w-148 shrink-0 p-0 items-stretch border-l border-[#e4beb1]/30">
               {FEATURES.map((feature) => {
                 const isActive = activeId === feature.id;
                 return (
@@ -303,7 +303,7 @@ export default function FeatureShowcase() {
                     onClick={() => setActiveId(feature.id)}
                     className={`relative flex flex-col items-start justify-start w-full py-5 sm:py-8 gap-3 sm:gap-4 cursor-pointer transition-all duration-300 ease-in-out group ${
                       isActive
-                        ? 'z-10 pl-[28px] sm:pl-[36px] pr-5 sm:pr-8'
+                        ? 'z-10 pl-7 sm:pl-9 pr-5 sm:pr-8'
                         : 'border-b border-gray-100 hover:bg-white/40 px-5 sm:px-8'
                     }`}
                   >
@@ -311,7 +311,7 @@ export default function FeatureShowcase() {
                     {isActive && (
                       <motion.div
                         layoutId="activeTabBg"
-                        className="absolute inset-0 bg-white border border-[#ff4f1f]/30 border-l-[4px] border-l-[#ff4f1f] rounded-2xl sm:rounded-3xl shadow-sm pointer-events-none"
+                        className="absolute inset-0 bg-white border border-[#ff4f1f]/30 border-l-4 border-l-[#ff4f1f] rounded-2xl sm:rounded-3xl shadow-sm pointer-events-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -327,16 +327,16 @@ export default function FeatureShowcase() {
                         {feature.id}
                       </span>
                       <div
-                        className={`h-[2px] w-8 sm:w-10 transition-colors ${isActive ? 'bg-[#ff4f1f]' : 'bg-gray-200 group-hover:bg-[#ff4f1f]/30'}`}
+                        className={`h-0.5 w-8 sm:w-10 transition-colors ${isActive ? 'bg-[#ff4f1f]' : 'bg-gray-200 group-hover:bg-[#ff4f1f]/30'}`}
                       />
                       {isActive && (
-                        <div className="w-[6px] h-[6px] rounded-full bg-[#ff4f1f] shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#ff4f1f] shrink-0" />
                       )}
                     </div>
 
                     {/* Title */}
                     <h3
-                      className={`font-fraunces text-left transition-colors mt-1 relative z-10 ${isActive ? 'text-xl sm:text-2xl lg:text-[32px] font-bold text-[#8e2d0b] leading-tight' : 'text-base sm:text-lg lg:text-[18px] font-normal text-[#5b4137] leading-relaxed group-hover:text-[#8e2d0b]'}`}
+                      className={`font-fraunces text-left transition-colors mt-1 relative z-10 ${isActive ? 'text-xl sm:text-2xl lg:text-[32px] font-bold text-primary-800 leading-tight' : 'text-base sm:text-lg lg:text-[18px] font-normal text-[#5b4137] leading-relaxed group-hover:text-primary-800'}`}
                     >
                       {feature.title}
                     </h3>
@@ -351,7 +351,7 @@ export default function FeatureShowcase() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden w-full text-left relative z-10"
                         >
-                          <p className="text-[#5b4137] text-sm sm:text-base leading-[24px] mt-1 sm:mt-2">
+                          <p className="text-[#5b4137] text-sm sm:text-base leading-6 mt-1 sm:mt-2">
                             {feature.description}
                           </p>
                         </motion.div>
@@ -362,15 +362,17 @@ export default function FeatureShowcase() {
               })}
             </div>
 
-            {/* ── Mobile CTA Button (between steps & visual, hidden on lg) ── */}
-            <div className="flex lg:hidden w-full px-1">
-              <button className="w-full bg-[#ff4f1f] hover:bg-[#e54519] active:scale-[0.98] transition-all text-white font-bold text-base py-[18px] rounded-full shadow-lg">
+            {/* ── Mobile CTA Button (between steps & visual, hidden on min-900) ── */}
+            <div className="flex min-[900px]:hidden w-full px-1">
+              <button className="w-full bg-[#ff4f1f] hover:bg-[#e54519] active:scale-[0.98] transition-all text-white font-bold text-base py-4.5 rounded-full shadow-lg">
                 {activeId === '03' ? 'Generate and share' : 'Publish and share'}
               </button>
             </div>
 
             {/* ── RIGHT COLUMN: Visual Stage ── */}
-            <div className="w-full lg:flex-1 shrink-0 relative flex items-center justify-start lg:justify-center overflow-visible">
+            <div
+              className={`w-full min-[900px]:flex-1 shrink-0 relative flex items-center min-[900px]:pt-12 ${activeId === '04' ? 'justify-center' : 'justify-center min-[900px]:justify-end lg:justify-center'} overflow-visible`}
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}
@@ -378,7 +380,7 @@ export default function FeatureShowcase() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -24, scale: 0.97 }}
                   transition={{ duration: 0.45, type: 'spring', stiffness: 200, damping: 22 }}
-                  className="w-full flex justify-center lg:justify-start"
+                  className={`w-full flex ${activeId === '04' ? 'justify-center' : 'justify-center lg:justify-start'}`}
                 >
                   {!activeFeature.isComponent ? (
                     activeFeature.id === '04' ? (
@@ -388,11 +390,11 @@ export default function FeatureShowcase() {
                         width={752}
                         height={637}
                         sizes="(max-width: 640px) 100%, (max-width: 1024px) 80%, 752px"
-                        className="w-full max-w-[752px] h-auto rounded-[48px]"
+                        className="w-full max-w-188 h-auto rounded-[48px]"
                         priority={false}
                       />
                     ) : (
-                      <div className="relative w-full max-w-full sm:max-w-[465.6px] mx-auto aspect-[464/488] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
+                      <div className="relative w-full max-w-full sm:max-w-[465.6px] mx-auto aspect-464/488 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
                         <Image
                           src={activeFeature.imageUrl as string}
                           alt={activeFeature.title}
