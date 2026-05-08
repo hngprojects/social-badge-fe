@@ -1,228 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { QrCode, Check } from 'lucide-react';
-
-// --- Tab 3 UI Component: Share Your Badge ---
-const ShareYourBadge = () => {
-  const [copied, setCopied] = useState(false);
-  const [activeApp, setActiveApp] = useState('twitter');
-
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="bg-white flex flex-col items-center gap-5 sm:gap-6 w-full max-w-full sm:max-w-[465.6px] mx-auto shadow-[0px_20px_40px_rgba(0,0,0,0.06)] relative border border-gray-100 rounded-[24px] sm:rounded-[32px]">
-      <div className="flex flex-col gap-1 w-full text-center">
-        <h3 className="font-fraunces font-bold text-[#0a0a0a] text-[22px] sm:text-[28px] leading-tight">
-          Share your Badge
-        </h3>
-        <p className="text-[#8a8a85] text-sm">Share it with attendees or embed it anywhere.</p>
-      </div>
-
-      <div className="flex flex-col gap-4 sm:gap-5 w-full">
-        {/* Link & Copy */}
-        <div className="flex items-center gap-2">
-          <div className="bg-[#f4f4f2] border border-black/5 flex-1 px-4 py-3 sm:py-3.5 rounded-xl overflow-hidden">
-            <p className="font-mono text-[#0a0a0a] text-xs truncate">badge.build/b/devcon-2026</p>
-          </div>
-          <button
-            onClick={handleCopy}
-            className="bg-[#0a0a0a] hover:bg-[#333] transition-colors flex items-center justify-center py-3 sm:py-3.5 px-5 sm:px-6 rounded-xl text-white font-bold text-[10px] tracking-widest uppercase shrink-0"
-          >
-            {copied ? <Check size={14} /> : 'COPY'}
-          </button>
-        </div>
-
-        {/* QR Code Placeholder */}
-        <div className="bg-[#eaeae6] border border-black/5 flex flex-col items-center justify-center p-5 rounded-[20px] sm:rounded-[24px] w-25 sm:w-30 mx-auto aspect-square gap-2 sm:gap-3 hover:scale-105 transition-transform cursor-pointer">
-          <QrCode className="text-[#8a8a85]" size={30} />
-          <p className="font-mono text-[#8a8a85] text-[9px] tracking-[1.5px] uppercase font-bold">
-            QR CODE
-          </p>
-        </div>
-
-        {/* Caption */}
-        <div className="flex flex-col gap-2 w-full">
-          <p className="font-mono text-[#8a8a85] text-[9px] tracking-[1.5px] uppercase font-bold">
-            CAPTION
-          </p>
-          <div className="bg-[#f4f4f2] border border-black/5 p-4 sm:p-5 rounded-[14px] sm:rounded-[16px]">
-            <p className="text-[#1a1c1d] text-[13px] leading-relaxed">
-              Thrilled to announce I&apos;ll be speaking at the Global Innovation Summit 2024! 🚀
-              Can&apos;t wait to share insights on the future of SocialBadge. #GIS2024 #SocialBadge
-            </p>
-          </div>
-        </div>
-
-        {/* Social Interactive Grid */}
-        {/* Social buttons — mobile: circular icon buttons / sm+: pill card layout */}
-        <div className="flex justify-center items-end w-full gap-5 mt-1 sm:hidden">
-          {/* LinkedIn */}
-          <div
-            onClick={() => setActiveApp('linkedin')}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-          >
-            <motion.div
-              animate={{ scale: activeApp === 'linkedin' ? 1 : 0.82 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-              className={`flex items-center justify-center rounded-full transition-all duration-300 shadow-md ${
-                activeApp === 'linkedin' ? 'w-14 h-14 bg-[#ff4f1f]' : 'w-11 h-11 bg-[#0a66c2]'
-              }`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778208086/linkden_aprwlg.png"
-                alt="LinkedIn"
-                width={activeApp === 'linkedin' ? 22 : 18}
-                height={activeApp === 'linkedin' ? 22 : 18}
-                className="object-contain invert brightness-0"
-              />
-            </motion.div>
-            <p
-              className={`text-[9px] font-bold uppercase tracking-wider ${activeApp === 'linkedin' ? 'text-[#ff4f1f]' : 'text-gray-400'}`}
-            >
-              LINKEDIN
-            </p>
-          </div>
-
-          {/* X / Twitter */}
-          <div
-            onClick={() => setActiveApp('twitter')}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-          >
-            <motion.div
-              animate={{ scale: activeApp === 'twitter' ? 1 : 0.82 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-              className={`flex items-center justify-center rounded-full transition-all duration-300 shadow-md ${
-                activeApp === 'twitter' ? 'w-14 h-14 bg-[#ff4f1f]' : 'w-11 h-11 bg-[#ff5c00]'
-              }`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778208110/twitter_ctppv3.png"
-                alt="X / Twitter"
-                width={activeApp === 'twitter' ? 22 : 18}
-                height={activeApp === 'twitter' ? 22 : 18}
-                className="object-contain invert brightness-0"
-              />
-            </motion.div>
-            <p
-              className={`text-[9px] font-bold uppercase tracking-wider ${activeApp === 'twitter' ? 'text-[#ff4f1f]' : 'text-[#ff5c00]'}`}
-            >
-              X / TWITTER
-            </p>
-          </div>
-
-          {/* Instagram */}
-          <div
-            onClick={() => setActiveApp('instagram')}
-            className="flex flex-col items-center gap-2 cursor-pointer"
-          >
-            <motion.div
-              animate={{ scale: activeApp === 'instagram' ? 1 : 0.82 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-              className={`flex items-center justify-center rounded-full transition-all duration-300 shadow-md ${
-                activeApp === 'instagram'
-                  ? 'w-14 h-14 bg-[#ff4f1f]'
-                  : 'w-11 h-11 bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'
-              }`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1765716432/icon-instagram_hnn5nq.svg"
-                alt="Instagram"
-                width={activeApp === 'instagram' ? 22 : 18}
-                height={activeApp === 'instagram' ? 22 : 18}
-                className="object-contain invert brightness-0"
-              />
-            </motion.div>
-            <p
-              className={`text-[9px] font-bold uppercase tracking-wider ${activeApp === 'instagram' ? 'text-[#ff4f1f]' : 'text-gray-400'}`}
-            >
-              INSTAGRAM
-            </p>
-          </div>
-        </div>
-
-        {/* sm+ pill card layout */}
-        <div className="hidden sm:flex justify-between items-center w-full gap-2 mt-2">
-          <div
-            onClick={() => setActiveApp('linkedin')}
-            className={`flex flex-col items-center justify-center gap-3 cursor-pointer flex-1 py-4 rounded-[20px] transition-all duration-300 ${activeApp === 'linkedin' ? 'bg-[#ff4f1f] shadow-md' : 'hover:bg-gray-50'}`}
-          >
-            <div
-              className={`flex items-center justify-center w-12 h-12 rounded-full ${activeApp === 'linkedin' ? '' : 'bg-[#0a66c2]'}`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778208086/linkden_aprwlg.png"
-                alt="LinkedIn"
-                width={20}
-                height={20}
-                className="object-contain invert brightness-0"
-              />
-            </div>
-            <p
-              className={`text-[10px] font-bold uppercase tracking-wider ${activeApp === 'linkedin' ? 'text-white' : 'text-gray-400'}`}
-            >
-              LINKEDIN
-            </p>
-          </div>
-          <div
-            onClick={() => setActiveApp('twitter')}
-            className={`flex flex-col items-center justify-center gap-3 cursor-pointer flex-1 py-4 rounded-[20px] transition-all duration-300 ${activeApp === 'twitter' ? 'bg-[#ff4f1f] shadow-md' : 'hover:bg-gray-50'}`}
-          >
-            <div
-              className={`flex items-center justify-center w-12 h-12 rounded-full ${activeApp === 'twitter' ? '' : 'bg-[#ff5c00]'}`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778208110/twitter_ctppv3.png"
-                alt="X / Twitter"
-                width={20}
-                height={20}
-                className="object-contain invert brightness-0"
-              />
-            </div>
-            <p
-              className={`text-[10px] font-bold uppercase tracking-wider ${activeApp === 'twitter' ? 'text-white' : 'text-[#ff5c00]'}`}
-            >
-              X / TWITTER
-            </p>
-          </div>
-          <div
-            onClick={() => setActiveApp('instagram')}
-            className={`flex flex-col items-center justify-center gap-3 cursor-pointer flex-1 py-4 rounded-[20px] transition-all duration-300 ${activeApp === 'instagram' ? 'bg-[#ff4f1f] shadow-md' : 'hover:bg-gray-50'}`}
-          >
-            <div
-              className={`flex items-center justify-center w-12 h-12 rounded-full ${activeApp === 'instagram' ? '' : 'bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]'}`}
-            >
-              <Image
-                src="https://res.cloudinary.com/dpx9mb1oa/image/upload/v1765716432/icon-instagram_hnn5nq.svg"
-                alt="Instagram"
-                width={20}
-                height={20}
-                className="object-contain invert brightness-0"
-              />
-            </div>
-            <p
-              className={`text-[10px] font-bold uppercase tracking-wider ${activeApp === 'instagram' ? 'text-white' : 'text-gray-400'}`}
-            >
-              INSTAGRAM
-            </p>
-          </div>
-        </div>
-
-        <button className="bg-[#ff4f1f] hover:bg-[#e54519] transition-colors text-white w-full py-4 sm:py-4.5 rounded-[14px] sm:rounded-[16px] font-bold text-sm flex items-center justify-center gap-2 group shadow-md">
-          <span>Done</span>
-          <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-            <span className="text-white text-[10px] leading-none mb-px">↗</span>
-          </div>
-        </button>
-      </div>
-    </div>
-  );
-};
 
 // --- Tab 4 UI Component: Comprehensive Analytics ---
 
@@ -233,7 +13,6 @@ const FEATURES = [
     imageUrl: 'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778206666/tb-1_ovhugn.jpg',
     description:
       'Every keystroke reflects instantly on the canvas. High-fidelity rendering ensures what you see is exactly what they share.',
-    isComponent: false,
   },
   {
     id: '02',
@@ -241,15 +20,14 @@ const FEATURES = [
     imageUrl: 'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778206666/tb-2_lh6gt4.jpg',
     description:
       'Changes appear instantly as organizers customize names, photos, and layouts, making every badge feel polished before it goes live.',
-    isComponent: false,
   },
   {
     id: '03',
     title: 'One-click social sharing',
-    component: ShareYourBadge,
+    imageUrl:
+      'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778280247/One-click_social_sharing_image_lyflfc.png',
     description:
       'Changes appear instantly as organizers customize names, photos, and layouts, making every badge feel polished before it goes live.',
-    isComponent: true,
   },
   {
     id: '04',
@@ -258,7 +36,6 @@ const FEATURES = [
       'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778259506/Main_Dashboard_Container_ol638s.png',
     description:
       "Track badge views, shares, clicks, and engagement insights in real time to understand what's driving event visibility.",
-    isComponent: false,
   },
 ];
 
@@ -370,9 +147,7 @@ export default function Feature() {
             </div>
 
             {/* ── RIGHT COLUMN: Visual Stage ── */}
-            <div
-              className={`w-full min-[900px]:flex-1 shrink-0 relative flex items-center min-[900px]:pt-12 ${activeId === '04' ? 'justify-center' : 'justify-center min-[900px]:justify-end lg:justify-center'} overflow-visible`}
-            >
+            <div className="w-full min-[900px]:flex-1 shrink-0 relative flex items-center min-[900px]:pt-12 justify-center overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}
@@ -380,32 +155,28 @@ export default function Feature() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -24, scale: 0.97 }}
                   transition={{ duration: 0.45, type: 'spring', stiffness: 200, damping: 22 }}
-                  className={`w-full flex ${activeId === '04' ? 'justify-center' : 'justify-center lg:justify-start'}`}
+                  className="w-full flex justify-center"
                 >
-                  {!activeFeature.isComponent ? (
-                    activeFeature.id === '04' ? (
+                  {activeFeature.id === '04' ? (
+                    <Image
+                      src={activeFeature.imageUrl as string}
+                      alt={activeFeature.title}
+                      width={752}
+                      height={637}
+                      sizes="(max-width: 640px) 100%, (max-width: 1024px) 80%, 752px"
+                      className="w-full max-w-188 h-auto rounded-[48px]"
+                      priority={false}
+                    />
+                  ) : (
+                    <div className="relative w-full max-w-full sm:max-w-[465.6px] mx-auto aspect-464/488 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
                       <Image
                         src={activeFeature.imageUrl as string}
                         alt={activeFeature.title}
-                        width={752}
-                        height={637}
-                        sizes="(max-width: 640px) 100%, (max-width: 1024px) 80%, 752px"
-                        className="w-full max-w-188 h-auto rounded-[48px]"
-                        priority={false}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 464px"
+                        priority={activeFeature.id === '01'}
                       />
-                    ) : (
-                      <div className="relative w-full max-w-full sm:max-w-[465.6px] mx-auto aspect-464/488 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
-                        <Image
-                          src={activeFeature.imageUrl as string}
-                          alt={activeFeature.title}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 464px"
-                          priority={activeFeature.id === '01'}
-                        />
-                      </div>
-                    )
-                  ) : (
-                    activeFeature.component && <activeFeature.component />
+                    </div>
                   )}
                 </motion.div>
               </AnimatePresence>
