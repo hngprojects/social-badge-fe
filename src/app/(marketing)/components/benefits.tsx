@@ -61,7 +61,7 @@ const BenefitSection = () => {
           </header>
 
           {/* Benefits List */}
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-4 md:space-y-6  ">
             {BENEFITS_DATA.map((benefit, index) => (
               // If desktopTitle is empty, we only show this on mobile
               <div
@@ -101,7 +101,7 @@ const BenefitSection = () => {
         </div>
 
         {/* LEFT SIDE */}
-        <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0">
+        <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0  lg:mt-[200px] ">
           <div className="relative w-full max-w-[640px]">
             <div className="relative rounded-3xl transition-transform hover:scale-[1.02] duration-500 h-[320px] md:h-auto md:aspect-square p-1 md:p-6 overflow-hidden">
               <div className="relative w-full h-full">
