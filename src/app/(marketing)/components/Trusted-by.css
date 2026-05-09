@@ -8,5 +8,5 @@
 }
 
 .marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 50s linear infinite;
 }

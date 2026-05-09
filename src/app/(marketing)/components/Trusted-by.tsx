@@ -4,7 +4,7 @@ import './Trusted-by.css';
 
 export default function TrustedBy() {
   const trustedBy = [
-    'DEVCON BEERLIN',
+    'DEVCON BERLIN',
     'LAGOS UX WEEK',
     'HACK THE BAY',
     'THE AI SUMMIT',
@@ -13,15 +13,15 @@ export default function TrustedBy() {
   ];
 
   return (
-    <div className=" overflow-hidden w-full mx-auto bg-[#2B2A2A]  py-3 ">
+    <section className=" overflow-hidden  text-[10px] bg-[#2B2A2A]  py-3 lg:text-[24px] lg:py-7.5 left-1/2 relative -translate-x-1/2 w-screen">
       <div className="marquee flex gap-8 text-white/50 whitespace-nowrap w-max">
         {[...trustedBy, ...trustedBy, ...trustedBy, ...trustedBy].map((item, index) => (
-          <div className="w-fit flex gap-6 text-[10px] font-bold" key={index}>
+          <div className="w-fit flex gap-6  font-bold items-center" key={index}>
             <p className="trusted-text">{item}</p>
-            <Image src={starIcon} width={8} height={8} alt="star-icon" />
+            <Image src={starIcon} alt="star-icon" className="w-2 h-2 lg:w-4.5 " />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
