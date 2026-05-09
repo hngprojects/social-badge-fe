@@ -48,13 +48,13 @@ const BenefitSection = () => {
             </div>
 
             {/* Mobile Headline */}
-            <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#333] leading-tight font sans">
+            <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#525252] leading-tight font sans">
               More <span className="italic text-[#FF4F11]  font-fraunces font-bold">reach.</span>{' '}
               Zero ad spend. No designer needed.
             </h2>
 
             {/* Desktop Headline */}
-            <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#333] leading-tight font sans">
+            <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#525252] leading-tight font sans">
               Why would they <br />{' '}
               <span className="italic text-[#FF4F11]  font-fraunces font-bold">share?</span>
             </h2>
@@ -63,12 +63,10 @@ const BenefitSection = () => {
           {/* Benefits List */}
           <div className="space-y-4 md:space-y-6  ">
             {BENEFITS_DATA.map((benefit, index) => (
-              // If desktopTitle is empty, we only show this on mobile
               <div
                 key={index}
                 className={`flex items-start gap-4 p-2 md:p-6 rounded-xl border border-[#EAEAE6] bg-white  ${!benefit.desktopTitle && 'lg:hidden'}`}
               >
-                {/* Custom Checkmark Icon */}
                 <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center">
                   <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center shadow-lg shadow-orange-100">
                     <div className="relative w-[24px] h-[24px] md:w-[28px] md:h-[28px]">
@@ -83,13 +81,10 @@ const BenefitSection = () => {
                 </div>
 
                 <div className="space-y-1">
-                  {/* Responsive Title: Swaps content based on screen size */}
                   <h3 className="text-lg md:text-xl font-bold text-[#0A0A0A] font-fraunces">
                     <span className="lg:hidden">{benefit.mobileTitle}</span>
                     <span className="hidden lg:inline">{benefit.desktopTitle}</span>
                   </h3>
-
-                  {/* Responsive Description: Swaps content based on screen size */}
                   <p className="text-[#797074] text-sm md:text-base leading-relaxed font-sans">
                     <span className="lg:hidden">{benefit.mobileDesc}</span>
                     <span className="hidden lg:inline">{benefit.desktopDesc}</span>
@@ -100,13 +95,13 @@ const BenefitSection = () => {
           </div>
         </div>
 
-        {/* LEFT SIDE */}
-        <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0  lg:mt-[200px] ">
+        {/* LEFT SIDE: Back to the original single container */}
+        <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0 lg:mt-[120px]">
           <div className="relative w-full max-w-[640px]">
             <div className="relative rounded-3xl transition-transform hover:scale-[1.02] duration-500 h-[320px] md:h-auto md:aspect-square p-1 md:p-6 overflow-hidden">
               <div className="relative w-full h-full">
                 <Image
-                  src="/assets/landing-page/benefits-cards.jpg"
+                  src="/assets/landing-page/benefit-cards.png"
                   alt="Social badges showing user profiles"
                   fill
                   priority
