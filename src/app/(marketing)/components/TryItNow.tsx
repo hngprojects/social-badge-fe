@@ -27,9 +27,9 @@ export default function TryItNow() {
   return (
     <section className="w-full max-w-300 mx-auto md:h-[944px] text-center md:text-left">
       {/* Label */}
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-4 not-md:justify-center">
         <div className="w-2 h-2 bg-orange-600 rounded "></div>
-        <p className="text-black/60 text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left">
+        <p className="text-black/60 text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left ">
           Try it now
         </p>
       </div>

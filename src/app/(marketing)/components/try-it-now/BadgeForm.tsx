@@ -48,7 +48,7 @@ export default function BadgeForm({ badge, update }: Props) {
           value={badge.name}
           onChange={(e) => update('name', e.target.value)}
           placeholder="Tunde A."
-          className=" border-neutral-200 focus-visible:ring-orange-400 h-12.5 bg-stone-100 rounded-[10px] outline  -outline-offset-1 outline-stone-200 "
+          className=" border-neutral-200 focus-visible:ring-1 focus-visible:ring-orange-400  h-12.5 bg-stone-100 rounded-[10px] outline  -outline-offset-1 outline-stone-200 "
         />
       </Field>
 
@@ -58,7 +58,7 @@ export default function BadgeForm({ badge, update }: Props) {
           value={badge.role}
           onChange={(e) => update('role', e.target.value)}
           placeholder="Product Lead · Paystack"
-          className="h-12.5 bg-stone-100 rounded-[10px] border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
+          className="h-12.5 bg-stone-100 focus-visible:ring-1 rounded-[10px] border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
         />
       </Field>
 
@@ -69,7 +69,7 @@ export default function BadgeForm({ badge, update }: Props) {
             value={badge.event}
             onChange={(e) => update('event', e.target.value)}
             placeholder="Lagos UX Week"
-            className="h-12.5 bg-stone-100 rounded-[10px] border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
+            className="h-12.5 bg-stone-100 focus-visible:ring-1 rounded-[10px] border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
           />
         </Field>
         <Field label="Hashtag">
@@ -77,7 +77,7 @@ export default function BadgeForm({ badge, update }: Props) {
             value={badge.hashtag}
             onChange={(e) => update('hashtag', e.target.value)}
             placeholder="#luxw26"
-            className="h-12.5 bg-stone-100 rounded-[10px] border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
+            className="h-12.5 bg-stone-100 rounded-[10px] focus-visible:ring-1 border-neutral-200 focus-visible:ring-orange-400 outline  -outline-offset-1 outline-stone-200 "
           />
         </Field>
       </div>

@@ -55,9 +55,13 @@ export function StylePicker({ selected, onChange, activeColor }: StylePickerProp
             key={value}
             onClick={() => onChange(value)}
             className={`
-              cursor-pointer overflow-hidden rounded-xl border p-0 outline -outline-offset-1 transition-all
-              ${isActive ? 'border-orange-500 bg-white outline-orange-200 shadow-sm' : 'border-stone-200 bg-stone-100 outline-stone-200 hover:border-stone-300'}
-            `}
+  cursor-pointer overflow-hidden rounded-xl border p-0 transition-all
+  ${
+    isActive
+      ? 'border-orange-500 bg-white ring-2 ring-orange-200 shadow-none'
+      : 'border-stone-200 bg-stone-100 hover:border-stone-300'
+  }
+`}
           >
             <div className="h-12 w-full" style={{ backgroundColor: activeColor }}>
               <StyleThumbnail style={value} />
