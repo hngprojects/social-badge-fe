@@ -148,7 +148,7 @@ const Templates = () => {
 
                 {/* Link arrow */}
                 <span className="flex items-center justify-center w-5 h-5 bg-primary rounded-full">
-                  <img
+                  <Image
                     src="/assets/landing-page/icons/Vector.svg"
                     alt="Arrow"
                     className="w-2 h-2"
@@ -163,7 +163,7 @@ const Templates = () => {
       {/* Explore button */}
       <button className="flex items-center justify-end gap-2 text-right underline font-medium">
         Explore more
-        <img src="/assets/landing-page/icons/Arrow Right.svg" alt="Arrow" className="w-5 h-5" />
+        <Image src="/assets/landing-page/icons/Arrow Right.svg" alt="Arrow" className="w-5 h-5" />
       </button>
     </div>
   );
