@@ -31,11 +31,11 @@ export default function Hero() {
         {/* HEADER */}
         <div className="flex flex-1 flex-col items-center pt-7.25 lg:max-w-150  md:items-start">
           <div className=" mb-2 gap-2.5 flex items-center">
-            <div className="bg-[#ff4f1f] rounded-full w-2 h-2"></div>{' '}
+            <div className="bg-[#ff4f1f] rounded-full w-2 h-2"> </div>{' '}
             <p className="text-[11px] font-light tracking-[1.54px] ">FOR EVENT ORGANIZERS</p>
           </div>
 
-          <h1 className="text-[clamp(32px,4.86vw,70px)] font- text-center font-bold leading-10 text-pretty tracking-tight md:text-left  lg:leading-16.5 lg:tracking-[-0.65px]">
+          <h1 className="text-[clamp(32px,6vw,75px)] font-semibold text-center leading-11 text-pretty tracking-[-0.65px] md:text-left  lg:leading-18.5 lg:tracking-[-0.65px] lg:mt-3">
             Turn attendees into your{' '}
             <span className="text-[#fa5424] italic font-fraunces">marketing </span>team.
           </h1>
@@ -77,7 +77,7 @@ export default function Hero() {
         <div className="grid flex-1  place-items-center">
           <div className="w-80 sm:w-92.5 h-auto -my-5.5 md:my:0 lg:w-full lg:flex-1">
             <Image src={cardsMobile} className="-ml-1 md:hidden" alt="badge preview" />
-            <Image src={cardsMd} className="hidden md:block " alt="badge preview" />
+            <Image src={cardsMd} className="hidden md:block" alt="badge preview" />
           </div>
         </div>
       </div>
