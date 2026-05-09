@@ -1,9 +1,7 @@
-import Feature from './components/feature';
-
 export default function LandingPage() {
   return (
     <div className="max-w-360 mx-auto py-2 px-4 sm:px-6 lg:px-8">
-      <Feature />
+      Replace this paragraph with your section imports
     </div>
   );
 }
