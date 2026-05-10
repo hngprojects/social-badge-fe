@@ -12,10 +12,10 @@ export default function PricingCard({ plan, billing }: PricingCardProps) {
 
   return (
     <div
-      className={`min-h-117.5 min-w-[340px] max-w-[350px] relative bg-white rounded-2xl p-6 text-left flex flex-col ${
+      className={`min-h-117.5 min-w-[340px] max-w-[350px] relative  rounded-2xl p-6 text-left flex flex-col ${
         plan.popular
-          ? 'border-2 border-[#e8501a] shadow-[0_4px_32px_rgba(232,80,26,0.12)]'
-          : 'border border-[#f0ece8] shadow-[0_2px_16px_rgba(0,0,0,0.06)]'
+          ? 'border-2 border-[#e8501a] shadow-[0_4px_32px_rgba(232,80,26,0.12)] bg-primary-50'
+          : 'border border-[#f0ece8] shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f8f8f8]'
       }`}
     >
       {plan.popular && (

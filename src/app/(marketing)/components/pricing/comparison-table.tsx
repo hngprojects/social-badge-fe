@@ -10,7 +10,7 @@ function TableCell({ value }: { value: CellValue }) {
 
 export default function ComparisonTable() {
   return (
-    <section className="lg:my-[140px] md:my-[100px] my-12 w-[80%] max-w-[1090] mx-auto text-center">
+    <section className="lg:my-[140px] md:my-[100px] my-12 w-full px-6 max-w-[1090] mx-auto text-center">
       <h2 className="text-[clamp(22px,3vw,32px)] tracking-tight mb-2 font-fraunces">
         Compare plans and features
       </h2>
