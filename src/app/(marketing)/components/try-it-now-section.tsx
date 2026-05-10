@@ -25,7 +25,7 @@ export default function TryItNow() {
   };
 
   return (
-    <section className='bg-[#f9f9f9]' >
+    <section className="bg-[#f9f9f9]">
       <div className="w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8  mx-auto md:h-[944px] text-center md:text-left">
         {/* Label */}
         <div className="flex items-center gap-2 mb-4 not-md:justify-center">

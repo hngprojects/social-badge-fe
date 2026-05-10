@@ -119,12 +119,12 @@ const Templates = () => {
 
               <div className="bg-[#F0F0E8] relative w-full h-64 shrink-0 overflow-hidden">
                 <Image
-  src={template.image}
-  alt={template.title}
-  fill
-  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-  className={`object-contain ${template.hasShadow ? 'p-0 pt-2' : 'p-4'}`}
-/>
+                  src={template.image}
+                  alt={template.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className={`object-contain ${template.hasShadow ? 'p-0 pt-2' : 'p-4'}`}
+                />
               </div>
 
               {/* Bottom half */}
