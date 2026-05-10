@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import cardImage from '../../../../../public/assets/landing-page/Hero section cards.png';
 
 const STATS = [
   { value: '1,240', label: 'Templates' },
@@ -8,7 +9,7 @@ const STATS = [
 
 const ExploreHero = () => {
   return (
-    <section className="relative overflow-hidden py-16 h-[600px]">
+    <section className="relative py-16  overflow-hidden max-w-360 mx-auto px-4 md:px-6 sm:px-6 lg:px-8">
       <Image
         src="/assets/landing-page/social-badge-icon-1.png"
         alt=""
@@ -30,7 +31,7 @@ const ExploreHero = () => {
         {/* Left: Text + Search + Stats */}
         <div className="flex flex-col gap-6">
           <h1 className="font-fraunces text-[96px] text=[#525252] leading-[1] tracking-[-0.65px] font-semibold">
-            Explore <span className="text-primary italic block">templates.</span>
+            Explore <span className="text-[#fa5424] italic block">templates.</span>
           </h1>
 
           <p className="max-w-[590px] text-[#5B4137]">
@@ -69,13 +70,13 @@ const ExploreHero = () => {
         </div>
 
         {/* Right: Badge image */}
-        <div className="flex justify-end absolute right-25 top-15">
+        <div className="flex justify-end">
           <Image
-            src="/assets/landing-page/Group 17.png"
+            src={cardImage}
             alt="Badge template previews"
             width={690}
             height={577}
-            className="object-contain w-[690px] h-auto"
+            className="w-full max-w-[690px] h-auto object-contain"
             priority
           />
         </div>
