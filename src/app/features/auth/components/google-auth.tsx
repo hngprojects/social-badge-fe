@@ -12,7 +12,10 @@ export const GoogleAuth = () => {
         <span className="h-px flex-1 bg-[#D1D1DB]" />
       </div>
 
-      <button className="w-full border border-[#D1D1DB] rounded-full p-2 flex items-center justify-center gap-1 sm:gap-3 hover:bg-[#f0f0f0]">
+      <button
+        type="button"
+        className="w-full border border-[#D1D1DB] rounded-full p-2 flex items-center justify-center gap-1 sm:gap-3 hover:bg-[#f0f0f0]"
+      >
         <Icons.GoogleLogo />
         <span className="text-sm sm:text-md">Continue with Google</span>
       </button>

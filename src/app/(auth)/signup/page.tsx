@@ -1,47 +1,68 @@
 'use client';
 import { AuthInput } from '@/app/features/auth/components/auth-input';
+import { AuthModal } from '@/app/features/auth/components/auth-modal';
 import { Button } from '@/app/features/auth/components/button';
 import { GoogleAuth } from '@/app/features/auth/components/google-auth';
-import { UserAuth } from '@/app/features/auth/types';
+import { useSignup } from '@/app/features/auth/hooks/useSignup';
+import { SignupPayload } from '@/app/features/auth/types';
 import { Icons } from '@/components/ui/icons';
-import { debounce } from '@/lib/utils';
-import { useMemo, useState } from 'react';
+import { MiniSpinner } from '@/components/ui/mini-spinner';
+import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 
 const Page = () => {
-  const [emailStatus, setEmailStatus] = useState<'idle' | 'checking' | 'available' | 'taken'>(
-    'idle',
-  );
+  // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
+  // const [emailStatus, setEmailStatus] = useState<'idle' | 'checking' | 'available' | 'taken'>(
+  //   'idle',
+  // );
+  const [showModal, setShowModal] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors, touchedFields },
-  } = useForm<UserAuth>({ mode: 'onChange' });
+    formState: { errors, touchedFields, isSubmitting },
+  } = useForm<SignupPayload>({ mode: 'onChange' });
+  const { signup } = useSignup();
 
   const password = useWatch({
     control,
     name: 'password',
   });
+  const email = useWatch({
+    control,
+    name: 'email',
+  });
+  // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED. UNCOMMENT AND REPLACE THE DEBOUNCED FUNCTION WITH THE ACTUAL API CALL ONCE THE ENDPOINT IS READY.
+  // const emailStatusStyle = emailStatus === 'available' ? 'border-[#22C55E]' : '';
 
-  const emailStatusStyle = emailStatus === 'available' ? 'border-[#22C55E]' : '';
+  // const debouncedEmailCheck = useMemo(
+  //   () =>
+  //     debounce(async () => {
+  //       setEmailStatus('checking');
+  //       // replace with the actual api call to check email availability
+  //       await new Promise((resolve) => setTimeout(resolve, 500));
+  //       const exists = false;
 
-  const debouncedEmailCheck = useMemo(
-    () =>
-      debounce(async () => {
-        setEmailStatus('checking');
-        // replace with the actual api call to check email availability
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        const exists = false;
+  //       setEmailStatus(exists ? 'taken' : 'available');
+  //     }, 500),
+  //   [],
+  // );
 
-        setEmailStatus(exists ? 'taken' : 'available');
-      }, 500),
-    [],
-  );
-
-  const onSubmit = (data: UserAuth) => {
+  const onSubmit = (data: SignupPayload) => {
     console.log(data);
+    signup(
+      {
+        email: data.email,
+        name: `${data.firstName} ${data.lastName}`,
+        password: data.password,
+      },
+      {
+        onSuccess: () => {
+          setShowModal(true);
+        },
+      },
+    );
   };
 
   return (
@@ -63,6 +84,8 @@ const Page = () => {
                   type="first-name"
                   placeholder="John"
                   label={'First Name'}
+                  disabled={isSubmitting}
+                  icon={errors.firstName ? <Icons.InfoCircle /> : null}
                   className={errors.firstName ? 'border-[#EF4444]' : ''}
                 />
                 {errors.firstName && (
@@ -76,6 +99,8 @@ const Page = () => {
                   type="last-name"
                   placeholder="Doe"
                   label={'Last Name'}
+                  disabled={isSubmitting}
+                  icon={errors.lastName ? <Icons.InfoCircle /> : null}
                   className={errors.lastName ? 'border-[#EF4444]' : ''}
                 />
                 {errors.lastName && (
@@ -88,35 +113,43 @@ const Page = () => {
               <AuthInput
                 {...register('email', {
                   required: 'Email is required',
-                  onChange: (e) => {
-                    const value = e.target.value;
+                  // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
+                  // onChange: (e) => {
+                  //   const value = e.target.value;
 
-                    if (!value) {
-                      setEmailStatus('idle');
-                      return;
-                    }
+                  //   if (!value) {
+                  //     setEmailStatus('idle');
+                  //     return;
+                  //   }
 
-                    debouncedEmailCheck();
-                  },
+                  //   debouncedEmailCheck();
+                  // },
                 })}
                 type="email"
+                disabled={isSubmitting}
                 placeholder="usersocialbadge@hng.com"
                 label={'Email'}
                 id="email"
-                icon={emailStatus === 'available' ? <Icons.Check stroke="#22C55E" /> : null}
-                className={
-                  errors.email || emailStatus === 'taken' ? 'border-[#EF4444]' : emailStatusStyle
-                }
+                icon={errors.email ? <Icons.InfoCircle /> : null}
+                className={errors.email ? 'border-[#EF4444]' : ''}
+                // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
+                // icon={emailStatus === 'available' ? <Icons.Check stroke="#22C55E" /> : null}
+                // className={
+                //   errors.email || emailStatus === 'taken' ? 'border-[#EF4444]' : emailStatusStyle
+                // }
               />
               {errors.email && (
                 <p className="text-[#EF4444] text-xs mt-1">{errors.email.message}</p>
               )}
-              {emailStatus === 'taken' && (
+
+              {/*
+               // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
+               {emailStatus === 'taken' && (
                 <p className="text-[#EF4444] text-xs mt-1">Email is already in use</p>
               )}
               {emailStatus === 'available' && !errors.email && (
                 <p className="text-[#15803D] text-xs mt-1">Email address is available</p>
-              )}
+              )} */}
             </div>
 
             <div className="">
@@ -141,10 +174,10 @@ const Page = () => {
                   },
                   required: 'Password is required',
                 })}
+                disabled={isSubmitting}
                 type="password"
                 placeholder="***********"
                 label={'Password'}
-                icon={password && !errors.password ? <Icons.Check stroke="#22C55E" /> : null}
                 className={
                   errors.password
                     ? 'border-[#EF4444]'
@@ -165,18 +198,21 @@ const Page = () => {
                     required: 'Please confirm your password',
                     validate: (value) => value === password || 'Passwords do not match!',
                   })}
+                  disabled={isSubmitting}
                   type="password"
                   placeholder="***********"
                   label={'Confirm Password'}
                   icon={errors.confirmPassword ? <Icons.InfoCircle /> : null}
-                  className={errors.confirmPassword ? 'border-[#EF4444]' : ''}
+                  className={
+                    errors.confirmPassword
+                      ? 'border-[#EF4444]'
+                      : !errors.confirmPassword && touchedFields.confirmPassword
+                        ? 'border-[#22C55E]'
+                        : ''
+                  }
                 />
                 {errors.confirmPassword && (
                   <p className="text-[#EF4444] text-xs mt-1">{errors.confirmPassword.message}</p>
-                )}
-
-                {!errors.confirmPassword && touchedFields.confirmPassword && (
-                  <p className="text-[#15803D] text-xs mt-1">Passwords match!</p>
                 )}
               </div>
 
@@ -186,6 +222,7 @@ const Page = () => {
                   className="h-3.5 w-3.5 rounded-[5px] border border-[#727272] accent-[#FA5424]"
                   name="remember-me"
                   id="remember-me"
+                  disabled={isSubmitting}
                   onChange={(e) => setIsChecked(e.target.checked)}
                   checked={isChecked}
                 />
@@ -197,7 +234,16 @@ const Page = () => {
             </div>
           </div>
 
-          <Button type="submit" disabled={!isChecked} name="Sign Up" />
+          <Button type="submit" disabled={!isChecked || isSubmitting}>
+            {isSubmitting ? (
+              <>
+                {' '}
+                <MiniSpinner /> Signing up...{' '}
+              </>
+            ) : (
+              'Sign Up'
+            )}
+          </Button>
         </form>
 
         {/* google auth */}
@@ -212,6 +258,19 @@ const Page = () => {
           </p>
         </div>
       </div>
+
+      {showModal && (
+        <AuthModal
+          email={email}
+          title="Verify your email addresss"
+          description={
+            <>
+              <p>We have sent a link to verify your email address. </p>
+              <p>Check your email for the link to verify your email address</p>
+            </>
+          }
+        />
+      )}
     </>
   );
 };
