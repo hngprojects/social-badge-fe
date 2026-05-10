@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import starIcon from '../../../../public/assets/icons/star-icon.svg';
-import './Trusted-by.css';
+import './trusted-by.css';
 
 export default function TrustedBy() {
   const trustedBy = [
@@ -13,7 +13,7 @@ export default function TrustedBy() {
   ];
 
   return (
-    <section className="text-[10px] bg-[#2B2A2A] py-3 lg:text-[24px] lg:py-7.5 overflow-hidden">
+    <section className="text-[10px] bg-[#2B2A2A] py-3 lg:text-[24px] lg:py-6 overflow-hidden">
       <div className="marquee flex gap-8 text-white/50 whitespace-nowrap w-max">
         {[...trustedBy, ...trustedBy, ...trustedBy, ...trustedBy].map((item, index) => (
           <div className="w-fit flex gap-6  font-bold items-center" key={index}>

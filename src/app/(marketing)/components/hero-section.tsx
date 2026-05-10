@@ -13,19 +13,23 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="max-w-360  mx-auto px-4 md:px-6 overflow-hidden">
-      <div className="relative md:flex md:pt-19.25 md:pb-[54.96px]">
+    <section className="bg-[#F9F9F9]">
+      <div className="max-w-360 mx-auto px-4 md:px-6 sm:px-6 lg:px-8  overflow-hidden  relative md:flex md:py-18">
         {/* BG FLOAT LOGO */}
         <Image
           src={logoFloat}
           alt="background image"
-          className="absolute -my-4 scale-[1.1] top-8 -left-10.5 lg:-top-2.5 lg:-left-9.5 "
+          width={400}
+          height={400}
+          className="absolute -my-4 scale-[1.1] top-8 -left-10.5 lg:-top-2.5 lg:-left-9.5"
         />
 
         <Image
           src={logoBg}
           alt="background image"
-          className="absolute  -right-45 bottom-10 rotate-13  scale-[1.1] lg:rotate-[-15deg] lg:-bottom-57.5 lg:-right-35"
+          width={400}
+          height={400}
+          className="absolute -right-45 bottom-10 rotate-13 scale-[1.1] lg:rotate-[-15deg] lg:-bottom-57.5 lg:-right-35"
         />
 
         {/* HEADER */}
@@ -49,7 +53,13 @@ export default function Hero() {
             <Button className="w-full font-light py-4! md:w-fit lg:py-6!" asChild>
               <Link href="/">
                 Create Your First Badge{' '}
-                <Image src={ctaArrow} alt="arrow" className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
+                <Image
+                  src={ctaArrow}
+                  alt="arrow"
+                  width={20}
+                  height={20}
+                  className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5"
+                />
               </Link>
             </Button>
 
@@ -76,8 +86,22 @@ export default function Hero() {
         {/* LANDING IMAGE */}
         <div className="grid flex-1  place-items-center">
           <div className="w-80 sm:w-92.5 h-auto -my-5.5 md:my:0 lg:w-full lg:flex-1">
-            <Image src={cardsMobile} className="-ml-1 md:hidden" alt="badge preview" />
-            <Image src={cardsMd} className="hidden md:block" alt="badge preview" />
+            <Image
+              src={cardsMobile}
+              width={320}
+              height={400}
+              loading="eager"
+              className="-ml-1 md:hidden"
+              alt="badge preview"
+            />{' '}
+            <Image
+              src={cardsMd}
+              width={600}
+              height={500}
+              loading="eager"
+              className="hidden md:block"
+              alt="badge preview"
+            />
           </div>
         </div>
       </div>
