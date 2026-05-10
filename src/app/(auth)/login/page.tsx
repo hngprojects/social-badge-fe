@@ -6,7 +6,8 @@ import { LoginPayload } from '@/app/features/auth/types';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+
 import { useForm } from 'react-hook-form';
 
 const Page = () => {

@@ -44,7 +44,10 @@ export default function Feature() {
   const activeFeature = FEATURES.find((f) => f.id === activeId) || FEATURES[0];
 
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-24 bg-[#f9f9f9] overflow-hidden">
+    <section
+      id="feature-section"
+      className="w-full py-12 sm:py-16 lg:py-24 bg-[#f9f9f9] overflow-hidden"
+    >
       <div className="mx-auto px-4 md:px-6 sm:px-6 lg:px-8  max-w-360">
         <div className="w-full mx-auto">
           {/* ── Header ── */}
