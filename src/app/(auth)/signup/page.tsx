@@ -261,6 +261,7 @@ const Page = () => {
 
       {showModal && (
         <AuthModal
+          closeModal={() => setShowModal(false)}
           email={email}
           title="Verify your email addresss"
           description={

@@ -72,6 +72,7 @@ const Page = () => {
 
       {showModal && (
         <AuthModal
+          closeModal={() => setShowModal(false)}
           email={email}
           imageSrc="/images/mail-img.png"
           title="We’ve sent you a reset link"

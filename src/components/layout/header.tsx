@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'Explore', href: '/explore' },
-  { label: 'Features', href: '/features' },
+  { label: 'Features', href: '#feature-section' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact us', href: '/contact' },
 ] as const;

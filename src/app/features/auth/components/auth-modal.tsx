@@ -9,17 +9,19 @@ export const AuthModal = ({
   title,
   email,
   description,
+  closeModal,
 }: {
   title: string;
   email: string;
   description: ReactNode;
   imageSrc?: string;
+  closeModal: () => void;
 }) => {
   return (
     <div className="w-full h-screen backdrop-blur-sm fixed top-0 left-0 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-5 w-full max-w-md">
         <div className="flex justify-end">
-          <button className="text-gray-500 hover:text-gray-700">
+          <button className="text-gray-500 hover:text-gray-700" onClick={closeModal}>
             <Icons.XMark />
           </button>
         </div>
