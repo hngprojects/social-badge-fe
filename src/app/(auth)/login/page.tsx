@@ -1,9 +1,38 @@
+'use client';
 import { AuthInput } from '@/app/features/auth/components/auth-input';
 import { GoogleAuth } from '@/app/features/auth/components/google-auth';
+import { useLogin } from '@/app/features/auth/hooks/useLogin';
+import { LoginPayload } from '@/app/features/auth/types';
 import { Button } from '@/components/ui/button';
+import { Icons } from '@/components/ui/icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useForm } from 'react-hook-form';
 
-const page = () => {
+const Page = () => {
+  const { login } = useLogin();
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, touchedFields, isSubmitting },
+  } = useForm<LoginPayload>();
+
+  const onSubmit = (data: LoginPayload) => {
+    console.log(data);
+    login(
+      {
+        email: data.email,
+        password: data.password,
+      },
+      {
+        onSuccess: () => {
+          router.push('/coming-soon');
+        },
+      },
+    );
+  };
+
   return (
     <div className="h-full flex flex-col justify-center gap-7">
       <div className="page-info sm:leading-20">
@@ -14,12 +43,24 @@ const page = () => {
       </div>
 
       <div className="login-form bg-[#F5F5F5] rounded-lg px-5 py-6 flex flex-col gap-7">
-        <form className=" flex flex-col gap-5">
+        <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col gap-5">
           <div className="flex flex-col gap-4">
-            <AuthInput type="email" placeholder="Enter your email" label={'Email'} />
+            <AuthInput
+              type="email"
+              placeholder="Enter your email"
+              label={'Email'}
+              {...register('email', { required: 'Email is required' })}
+              icon={touchedFields.email && errors.email ? <Icons.InfoCircle /> : ''}
+            />
 
             <div className="">
-              <AuthInput type="password" placeholder="Enter your password" label={'Password'} />
+              <AuthInput
+                type="password"
+                placeholder="Enter your password"
+                label={'Password'}
+                {...register('password', { required: 'Password is required' })}
+                icon={touchedFields.password && errors.password ? <Icons.InfoCircle /> : ''}
+              />
               <div className="flex items-center justify-between flex-wrap-reverse gap-2 mt-2">
                 <div className="flex items-center gap-2">
                   <input
@@ -43,7 +84,9 @@ const page = () => {
             </div>
           </div>
 
-          <Button type="submit" name="Login" />
+          <Button disabled={isSubmitting} type="submit">
+            {isSubmitting ? 'Logging in...' : 'Login'}
+          </Button>
         </form>
 
         {/* google auth */}
@@ -62,4 +105,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

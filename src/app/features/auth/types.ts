@@ -16,3 +16,8 @@ export type ApiError = {
   message: string;
   status: string;
 };
+
+export type LoginPayload = {
+  email: string;
+  password: string;
+};
