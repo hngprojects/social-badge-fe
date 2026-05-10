@@ -5,8 +5,8 @@ export default function ContactWays() {
         Ways to reach us
       </h3>
       <p className="text-[#8A8A85] text-base leading-relaxed mb-10">
-        We&apos;re a small team. No ticketing queues, no bots — just real people who care
-        about making your events go viral.
+        We&apos;re a small team. No ticketing queues, no bots — just real people who care about
+        making your events go viral.
       </p>
 
       {/* Email card */}

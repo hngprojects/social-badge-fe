@@ -10,20 +10,20 @@ import { Label } from '@/components/ui/label';
 
 import ctaArrow from '../../../../../public/assets/icons/round-arrow-right-up.svg';
 
-
 const contactSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
-  email: z.string().min(1, 'Email is required').refine(
-    (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
-    { message: 'Enter a valid email address' },
-  ),
+  email: z
+    .string()
+    .min(1, 'Email is required')
+    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: 'Enter a valid email address',
+    }),
   subject: z.string().min(1, 'Please select a topic'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
-
 
 function zodResolver(schema: z.ZodType<ContactFormValues>) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,7 +41,6 @@ function zodResolver(schema: z.ZodType<ContactFormValues>) {
     return { values: {}, errors };
   };
 }
-
 
 export default function ContactForm() {
   const {
@@ -95,9 +94,7 @@ export default function ContactForm() {
               className="h-12 text-base rounded-[12px] bg-[#F4F4F2] placeholder:text-[#757575] border-[#EAEAE6] aria-invalid:border-red-400"
               {...register('firstName')}
             />
-            {errors.firstName && (
-              <p className="text-xs text-red-500">{errors.firstName.message}</p>
-            )}
+            {errors.firstName && <p className="text-xs text-red-500">{errors.firstName.message}</p>}
           </div>
 
           <div className="flex flex-col gap-1.5">
@@ -114,18 +111,13 @@ export default function ContactForm() {
               className="h-12 text-base rounded-[12px] bg-[#F4F4F2] placeholder:text-[#757575] border-[#EAEAE6] aria-invalid:border-red-400"
               {...register('lastName')}
             />
-            {errors.lastName && (
-              <p className="text-xs text-red-500">{errors.lastName.message}</p>
-            )}
+            {errors.lastName && <p className="text-xs text-red-500">{errors.lastName.message}</p>}
           </div>
         </div>
 
         {/* Email */}
         <div className="flex flex-col gap-1.5">
-          <Label
-            htmlFor="email"
-            className="text-[11px] tracking-widest uppercase text-[#8A8A85]"
-          >
+          <Label htmlFor="email" className="text-[11px] tracking-widest uppercase text-[#8A8A85]">
             Email Address
           </Label>
           <Input
@@ -136,17 +128,12 @@ export default function ContactForm() {
             className="h-12 text-base rounded-[12px] bg-[#F4F4F2] placeholder:text-[#757575] border-[#EAEAE6] aria-invalid:border-red-400"
             {...register('email')}
           />
-          {errors.email && (
-            <p className="text-xs text-red-500">{errors.email.message}</p>
-          )}
+          {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
         </div>
 
         {/* Subject */}
         <div className="flex flex-col gap-1.5">
-          <Label
-            htmlFor="subject"
-            className="text-[11px] tracking-widest uppercase text-[#8A8A85]"
-          >
+          <Label htmlFor="subject" className="text-[11px] tracking-widest uppercase text-[#8A8A85]">
             Subject
           </Label>
           <select
@@ -162,9 +149,7 @@ export default function ContactForm() {
             <option value="feedback">Feedback</option>
             <option value="billing">Billing</option>
           </select>
-          {errors.subject && (
-            <p className="text-xs text-red-500">{errors.subject.message}</p>
-          )}
+          {errors.subject && <p className="text-xs text-red-500">{errors.subject.message}</p>}
         </div>
 
         {/* Message */}
@@ -183,9 +168,7 @@ export default function ContactForm() {
             className="resize-none w-full rounded-[12px] border border-[#EAEAE6] bg-[#F4F4F2] px-3 py-3 text-base placeholder:text-[#757575] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring aria-invalid:border-red-400"
             {...register('message')}
           />
-          {errors.message && (
-            <p className="text-xs text-red-500">{errors.message.message}</p>
-          )}
+          {errors.message && <p className="text-xs text-red-500">{errors.message.message}</p>}
         </div>
 
         <Button
