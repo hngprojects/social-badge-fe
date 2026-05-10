@@ -1,8 +1,14 @@
 import { apiClient } from '@/lib/api/client';
-import { endpointSignupPayload } from '../types';
+import { endpointSignupPayload, LoginPayload } from '../types';
 
 export const signup = async (data: endpointSignupPayload) => {
   return apiClient('/auth/signup', {
+    method: 'POST',
+    data,
+  });
+};
+export const login = async (data: LoginPayload) => {
+  return apiClient('/auth/login', {
     method: 'POST',
     data,
   });
@@ -28,13 +34,6 @@ export const verifyEmail = async ({ token }: { token: string }) => {
     data: { token },
   });
 };
-
-// export const login = async (data: LoginPayload) => {
-//   return apiClient<AuthResponse>('/auth/login', {
-//     method: 'POST',
-//     data,
-//   });
-// };
 
 // export const checkEmailAvailability = async (email: string) => {
 //   return apiClient<CheckEmailResponse>(`/auth/check-email`, {
