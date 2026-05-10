@@ -17,7 +17,7 @@ const FilterTabs = () => {
   const [active, setActive] = useState('All');
 
   return (
-    <div className="flex items-center gap-3 py-7 border-b border-[#0A0A0A]/10 flex-wrap">
+    <div className="flex items-center gap-3 py-7 border-b border-[#0A0A0A]/10 flex-wrap max-w-360 mx-auto px-4 md:px-6 sm:px-6 lg:px-8">
       {FILTERS.map((filter) => {
         const isActive = active === filter;
         return (

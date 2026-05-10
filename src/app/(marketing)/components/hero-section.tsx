@@ -1,12 +1,4 @@
 import { Button } from '@/components/ui/button';
-import ctaArrow from '../../../../public/assets/icons/round-arrow-right-up.svg';
-import rightArrow from '../../../../public/assets/icons/round-arrow-right.svg';
-
-import cardsMobile from '../../../../public/assets/landing-page/badge-group.png';
-import cardsMd from '../../../../public/assets/landing-page/Hero section cards.png';
-
-import logoFloat from '../../../../public/assets/landing-page/logo-float-low-bg.svg';
-import logoBg from '../../../../public/assets/landing-page/landing-logo-bgg.svg';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,18 +9,20 @@ export default function Hero() {
       <div className="max-w-360 mx-auto px-4 md:px-6 sm:px-6 lg:px-8  overflow-hidden  relative md:flex md:py-18">
         {/* BG FLOAT LOGO */}
         <Image
-          src={logoFloat}
+          src="/assets/landing-page/logo-float-low-bg.svg"
           alt="background image"
           width={400}
           height={400}
+          style={{ width: 'auto', height: 'auto' }}
           className="absolute -my-4 scale-[1.1] top-8 -left-10.5 lg:-top-2.5 lg:-left-9.5"
         />
 
         <Image
-          src={logoBg}
+          src="/assets/landing-page/landing-logo-bgg.svg"
           alt="background image"
           width={400}
           height={400}
+          style={{ width: 'auto', height: 'auto' }}
           className="absolute -right-45 bottom-10 rotate-13 scale-[1.1] lg:rotate-[-15deg] lg:-bottom-57.5 lg:-right-35"
         />
 
@@ -54,7 +48,7 @@ export default function Hero() {
               <Link href="/">
                 Create Your First Badge{' '}
                 <Image
-                  src={ctaArrow}
+                  src="/assets/icons/round-arrow-right-up.svg"
                   alt="arrow"
                   width={20}
                   height={20}
@@ -74,7 +68,7 @@ export default function Hero() {
               <span>View Templates</span>
               <Image
                 className="md:hidden"
-                src={rightArrow}
+                src="/assets/icons/round-arrow-right.svg"
                 alt="right arrow"
                 width={20}
                 height={20}
@@ -87,7 +81,7 @@ export default function Hero() {
         <div className="grid flex-1  place-items-center">
           <div className="w-80 sm:w-92.5 h-auto -my-5.5 md:my:0 lg:w-full lg:flex-1">
             <Image
-              src={cardsMobile}
+              src="/assets/landing-page/badge-group.png"
               width={320}
               height={400}
               loading="eager"
@@ -95,10 +89,11 @@ export default function Hero() {
               alt="badge preview"
             />{' '}
             <Image
-              src={cardsMd}
+              src="/assets/landing-page/Hero section cards.png"
               width={600}
               height={500}
               loading="eager"
+              style={{ width: '100%', height: 'auto' }}
               className="hidden md:block"
               alt="badge preview"
             />

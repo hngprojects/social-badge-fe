@@ -62,7 +62,7 @@ export default function BadgeForm({ badge, update }: Props) {
       </Field>
 
       {/* Event + Hashtag */}
-      <div className="grid grid-cols-2 gap-[10px]">
+      <div className="grid grid-cols-2 gap-2.5">
         <Field label="Event">
           <Input
             value={badge.event}
@@ -109,7 +109,7 @@ export default function BadgeForm({ badge, update }: Props) {
       </Field>
 
       <Button
-        className="w-full h-[56px] bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-full text-sm mt-2 transition-colors h-11"
+        className="w-full  bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-full text-sm mt-2 transition-colors h-11"
         disabled
       >
         Generate and share

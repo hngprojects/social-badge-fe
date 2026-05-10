@@ -51,8 +51,8 @@ export default function Feature() {
           <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 max-w-2xl">
             <div className="flex items-center gap-3">
               <div className="bg-[#ff4f1f] w-2 h-2 rounded-sm" />
-              <span className="text-[11px] text-gray-400 tracking-[1.54px] uppercase font-bold">
-                FOR EVENT ORGANIZERS
+              <span className="text-[11px] text-gray-400 tracking-[1.54px] uppercase">
+                FEATURES
               </span>
             </div>
             <h2 className="font-fraunces font-semibold text-[32px] sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-18.5 tracking-[-0.65px] text-[#525252]">
@@ -71,7 +71,7 @@ export default function Feature() {
             }`}
           >
             {/* ── LEFT COLUMN: Step Menu ── */}
-            <div className="flex flex-col w-full min-[900px]:w-[450px] lg:w-148 shrink-0 p-0 items-stretch border-l border-[#e4beb1]/30">
+            <div className="flex flex-col w-full min-[900px]:w-112.5 lg:w-148 shrink-0 p-0 items-stretch border-l border-[#e4beb1]/30">
               {FEATURES.map((feature) => {
                 const isActive = activeId === feature.id;
                 return (

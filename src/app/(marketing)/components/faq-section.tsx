@@ -53,12 +53,12 @@ export default function FAQ() {
   return (
     <section className="w-full md:max-w-5xl mx-auto py-10 px-2 md:py-20 md:px-4 rouneded-none">
       <div className="mb-10 md:mb-20 text-center">
-        <div className="font-sans tracking-widest text-muted-foreground text-[14px] md:text-[11px] items-center flex justify-center mb-6">
+        <div className="font-sans tracking-widest text-muted-foreground text-[11px] items-center flex justify-center mb-6">
           <span className="inline-block h-2 w-2 rounded-full bg-primary mr-2 text-sm" />
-          <span className="hidden md:block">FAQ</span>
+          <span className="hidden md:block">FAQS</span>
           <span className="block md:hidden">FREQUENTLY ASKED QUESTIONS</span>
         </div>
-        <div className="font-fraunces justify-center text-center leading-18.5 text-3xl md:text-[76px] flex flex-row md:flex-col gap-2 px-4">
+        <div className="font-fraunces justify-center text-center leading-18.5 text-[clamp(26px,calc(5vw+8px),78px)] flex flex-row md:flex-col gap-2 px-4">
           <span className="block md:hidden">All</span>
           <p className="font-semibold hidden md:block">Questions,</p>
           <p className="font-semibold md:hidden">questions,</p>
