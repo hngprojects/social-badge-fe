@@ -25,24 +25,26 @@ export default function LegalLayout({
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="relative overflow-hidden bg-[#fff8f6] dark:bg-background py-16 md:py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-[#f9f9f9] dark:bg-background py-16 md:py-24 lg:py-32">
         {/* Background Images */}
         <Image
           src={logoFloat}
           alt="background shape"
           width={400}
           height={400}
-          className="absolute scale-[0.5] md:scale-[1.1] -top-34 -left-24 md:-my-4 md:top-8 md:-left-10.5 lg:-top-2.5 lg:-left-9.5 opacity-60"
+          priority
+          className="absolute scale-[0.5] md:scale-[1.1] -top-60 -left-24 md:-my-4 md:top-8 md:-left-10.5 lg:-top-2.5 lg:-left-9.5 opacity-60"
         />
         <Image
           src={logoBg}
           alt="background shape"
           width={400}
           height={400}
+          priority
           className="absolute scale-[0.7] md:scale-[1.1] rotate-13 -bottom-80 -right-40 md:bottom-10 md:-right-45 lg:rotate-[-15deg] lg:-bottom-57.5 lg:-right-35 opacity-60"
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8 pt-12 md:pt-16 pb-8 md:pb-12 flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="relative mx-auto max-w-360 px-4 md:px-6 lg:px-8 pt-12 md:pt-16 pb-8 md:pb-12 flex flex-col items-center md:items-start text-center md:text-left">
           <h1 className="text-[clamp(40px,6vw,75px)] font-semibold tracking-[-0.65px] leading-tight text-foreground flex flex-col">
             <span>{title}</span>
             <span className="font-fraunces text-primary italic">{titleHighlight}</span>
@@ -54,7 +56,7 @@ export default function LegalLayout({
       </section>
 
       {/* Main Content */}
-      <section className="mx-auto max-w-7xl px-4 py-12 md:px-6 lg:px-8 lg:py-20">
+      <section className="mx-auto max-w-360 px-4 py-12 md:px-6 lg:px-8 lg:py-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           {/* Table of Contents */}
           <aside className="hidden lg:block w-64 shrink-0">

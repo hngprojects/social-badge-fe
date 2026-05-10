@@ -16,3 +16,22 @@ export const debounce = <T extends (...args: unknown[]) => void>(func: T, delay:
     }, delay);
   };
 };
+
+export const getEmailProviderUrl = (email: string) => {
+  const domain = email.split('@')[1];
+
+  switch (domain) {
+    case 'gmail.com':
+      return 'https://mail.google.com';
+
+    case 'outlook.com':
+    case 'hotmail.com':
+      return 'https://outlook.live.com/mail';
+
+    case 'yahoo.com':
+      return 'https://mail.yahoo.com';
+
+    default:
+      return null;
+  }
+};

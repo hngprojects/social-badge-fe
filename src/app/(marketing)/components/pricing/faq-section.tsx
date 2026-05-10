@@ -51,9 +51,7 @@ export default function FAQSection() {
                     transition={{ duration: 0.25, ease: 'easeInOut' }}
                     style={{ overflow: 'hidden' }}
                   >
-                    <p className="text-sm text-[#666] leading-relaxed pb-4.5 m-0">
-                      {item.answer}
-                    </p>
+                    <p className="text-sm text-[#666] leading-relaxed pb-4.5 m-0">{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
