@@ -8,7 +8,7 @@ const BuildYourOwn = () => {
         {/* Eyebrow */}
         <div className="text-[#8A8A85] uppercase text-[11px] tracking-[1.5px] flex items-center gap-2 mb-5">
           <span className="inline-block bg-primary rounded-full w-[8px] h-[8px]" />
-          <span>Don't see what you need?</span>
+          <span>Don&apos;t see what you need?</span>
         </div>
 
         {/* Heading */}
