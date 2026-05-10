@@ -42,7 +42,7 @@ export default function TryItNow() {
 
         <div className="flex flex-col md:flex-row gap-8 items-start mt-17.5 md:h-[767px]">
           <div className="w-full md:[576px] h-full">
-            <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-75 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.12)]">
+            <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-75 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)]">
               <BadgePreview ref={previewRef} badge={badge} />
             </div>
           </div>

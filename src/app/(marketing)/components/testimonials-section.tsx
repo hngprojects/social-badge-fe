@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Testimonial {
   id: string;
@@ -89,20 +88,6 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
     return () => clearInterval(interval);
   }, [isAutoPlay, testimonials.length, slidesPerView]);
 
-  const goToPrevious = () => {
-    setIsAutoPlay(false);
-    setCurrent((prev) =>
-      prev === 0 ? Math.ceil(testimonials.length / slidesPerView) - 1 : prev - 1,
-    );
-  };
-
-  const goToNext = () => {
-    setIsAutoPlay(false);
-    setCurrent((prev) =>
-      prev === Math.ceil(testimonials.length / slidesPerView) - 1 ? 0 : prev + 1,
-    );
-  };
-
   const goToSlide = (index: number) => {
     setIsAutoPlay(false);
     setCurrent(index);
@@ -114,7 +99,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-[599px]">
+    <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-[599px]">
       <div className="max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -137,7 +122,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
               }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="w-full md:w-1/2 flex-shrink-0 px-2 h-[300px]">
+                <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-[300px]">
                   <div
                     className={`${getCardColor(index)} rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
                   >
@@ -151,7 +136,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
 
                     {/* Author Info */}
                     <div className="flex items-center gap-3">
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         <div className="w-14 h-14 rounded-full bg-[#2d2d2d] flex items-center justify-center">
                           <span className="text-white font-bold text-sm tracking-wider">
                             {testimonial.initials}
