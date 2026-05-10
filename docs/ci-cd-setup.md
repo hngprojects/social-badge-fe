@@ -22,11 +22,11 @@ A practical reference for frontend engineers working on this project. It covers 
 
 The project uses a three-tier branch model that maps directly to environments:
 
-| Branch    | Environment | Purpose                                      |
-| --------- | ----------- | -------------------------------------------- |
+| Branch    | Environment | Purpose                                       |
+| --------- | ----------- | --------------------------------------------- |
 | `dev`     | Development | Active development — where feature work lands |
-| `staging` | Staging     | Pre-production validation                    |
-| `main`    | Production  | Live, customer-facing code                   |
+| `staging` | Staging     | Pre-production validation                     |
+| `main`    | Production  | Live, customer-facing code                    |
 
 **The rule is simple:** code flows in one direction — `dev` → `staging` → `main`. Never skip a stage, and never push feature work directly to `staging` or `main`.
 
@@ -38,10 +38,10 @@ The pipeline is defined in `.github/workflows/CI.yml` and runs automatically on 
 
 ### When it runs
 
-| Event             | Branches watched              |
-| ----------------- | ----------------------------- |
-| `push`            | `dev`, `staging`, `main`      |
-| `pull_request`    | `staging`, `main`             |
+| Event          | Branches watched         |
+| -------------- | ------------------------ |
+| `push`         | `dev`, `staging`, `main` |
+| `pull_request` | `staging`, `main`        |
 
 Every push to any of those branches triggers a CI run. Every PR targeting `staging` or `main` also triggers one — and must pass before the PR can be merged.
 
@@ -66,10 +66,10 @@ Before code even reaches GitHub, Husky runs a `pre-commit` hook that formats all
 
 **What gets formatted on commit:**
 
-| File types                          | Action             |
-| ----------------------------------- | ------------------ |
-| `*.ts`, `*.tsx`, `*.js`, `*.jsx`    | `prettier --write` |
-| `*.json`, `*.css`, `*.md`, `*.mdx`  | `prettier --write` |
+| File types                         | Action             |
+| ---------------------------------- | ------------------ |
+| `*.ts`, `*.tsx`, `*.js`, `*.jsx`   | `prettier --write` |
+| `*.json`, `*.css`, `*.md`, `*.mdx` | `prettier --write` |
 
 This means your commits will always be consistently formatted, keeping diffs clean and code reviews focused on logic rather than style.
 
@@ -94,27 +94,27 @@ This project uses [`@t3-oss/env-nextjs`](https://env.t3.gg/) with Zod schemas to
 
 ### Variable files
 
-| File                  | Scope          | Accessible in         |
-| --------------------- | -------------- | --------------------- |
-| `src/env/client.ts`   | Client-side    | Browser + server      |
-| `src/env/server.ts`   | Server-side    | Server only (SSR/API) |
+| File                | Scope       | Accessible in         |
+| ------------------- | ----------- | --------------------- |
+| `src/env/client.ts` | Client-side | Browser + server      |
+| `src/env/server.ts` | Server-side | Server only (SSR/API) |
 
 ### Defined variables
 
 **Client (`src/env/client.ts`)**
 
-| Variable               | Required | Default                   | Description             |
-| ---------------------- | -------- | ------------------------- | ----------------------- |
-| `NEXT_PUBLIC_APP_URL`  | No       | `http://localhost:3000`   | Public URL of the app   |
-| `NEXT_PUBLIC_APP_NAME` | No       | `Next Starter`            | Display name of the app |
+| Variable               | Required | Default                 | Description             |
+| ---------------------- | -------- | ----------------------- | ----------------------- |
+| `NEXT_PUBLIC_APP_URL`  | No       | `http://localhost:3000` | Public URL of the app   |
+| `NEXT_PUBLIC_APP_NAME` | No       | `Next Starter`          | Display name of the app |
 
 **Server (`src/env/server.ts`)**
 
-| Variable       | Required | Default         | Description                  |
-| -------------- | -------- | --------------- | ---------------------------- |
-| `NODE_ENV`     | No       | `development`   | Must be `development`, `test`, or `production` |
-| `API_BASE_URL` | No       | —               | Backend API base URL         |
-| `API_SECRET`   | No       | —               | Secret key for API auth      |
+| Variable       | Required | Default       | Description                                    |
+| -------------- | -------- | ------------- | ---------------------------------------------- |
+| `NODE_ENV`     | No       | `development` | Must be `development`, `test`, or `production` |
+| `API_BASE_URL` | No       | —             | Backend API base URL                           |
+| `API_SECRET`   | No       | —             | Secret key for API auth                        |
 
 ### How to set variables per environment
 
@@ -158,13 +158,13 @@ CI runs on `dev` after your PR merges. No CI gate is required to merge into `dev
 
 ### Naming conventions
 
-| Type          | Format                          | Example                        |
-| ------------- | ------------------------------- | ------------------------------ |
-| Feature       | `feat/<short-description>`      | `feat/user-profile-page`       |
-| Bug fix       | `fix/<short-description>`       | `fix/avatar-overflow`          |
-| Docs          | `docs/<short-description>`      | `docs/ci-cd-setup`             |
-| Chore/tooling | `chore/<short-description>`     | `chore/update-dependencies`    |
-| Refactor      | `refactor/<short-description>`  | `refactor/auth-module`         |
+| Type          | Format                         | Example                     |
+| ------------- | ------------------------------ | --------------------------- |
+| Feature       | `feat/<short-description>`     | `feat/user-profile-page`    |
+| Bug fix       | `fix/<short-description>`      | `fix/avatar-overflow`       |
+| Docs          | `docs/<short-description>`     | `docs/ci-cd-setup`          |
+| Chore/tooling | `chore/<short-description>`    | `chore/update-dependencies` |
+| Refactor      | `refactor/<short-description>` | `refactor/auth-module`      |
 
 ---
 
@@ -184,6 +184,7 @@ git pull origin dev
 ```
 
 On the PR:
+
 - CI will run automatically (type check + build).
 - At least one reviewer should approve the changes.
 - Only merge once CI is green.
@@ -240,6 +241,7 @@ npm run typecheck
 ```
 
 Common causes:
+
 - Missing or incorrect prop types on a component.
 - Using a value that could be `undefined` without a null check.
 - Import of a type that no longer exists or was renamed.
@@ -253,6 +255,7 @@ npm run build
 ```
 
 Common causes:
+
 - **Environment variable validation failed** — a variable defined in `src/env/server.ts` or `src/env/client.ts` is missing. Add it to `.env.local` locally or to the CI secrets in GitHub.
 - **Import errors** — a module path is wrong or a package was not installed.
 - **Syntax errors** — something that TypeScript missed but the bundler caught.
@@ -273,14 +276,14 @@ git commit -m "chore: update lockfile"
 
 ## 9. Common Mistakes to Avoid
 
-| Mistake | Why it's a problem | What to do instead |
-| ------- | ------------------ | ------------------ |
-| Pushing directly to `staging` or `main` | Bypasses CI and peer review | Always use a PR |
-| Skipping `dev` and opening a PR straight to `staging` | Changes are untested in dev | Merge to `dev` first |
-| Committing `.env.local` | Exposes secrets in git history | It is already in `.gitignore` — leave it there |
+| Mistake                                                 | Why it's a problem                                                       | What to do instead                                                              |
+| ------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Pushing directly to `staging` or `main`                 | Bypasses CI and peer review                                              | Always use a PR                                                                 |
+| Skipping `dev` and opening a PR straight to `staging`   | Changes are untested in dev                                              | Merge to `dev` first                                                            |
+| Committing `.env.local`                                 | Exposes secrets in git history                                           | It is already in `.gitignore` — leave it there                                  |
 | Adding a new env variable in code but not in the schema | Build will pass locally (if the var is set) but fail for others or in CI | Always update `src/env/client.ts` or `src/env/server.ts` when adding a variable |
-| Force-pushing to shared branches | Rewrites history, breaks others' local copies | Use a new commit to fix mistakes on shared branches |
-| Merging a PR with a failing CI run | Introduces broken code to the branch | Fix CI first, then merge |
+| Force-pushing to shared branches                        | Rewrites history, breaks others' local copies                            | Use a new commit to fix mistakes on shared branches                             |
+| Merging a PR with a failing CI run                      | Introduces broken code to the branch                                     | Fix CI first, then merge                                                        |
 
 ---
 
