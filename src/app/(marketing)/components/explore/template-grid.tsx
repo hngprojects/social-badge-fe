@@ -128,7 +128,7 @@ const templates: Template[] = [
 
 const TemplateGrid = () => {
   return (
-    <section className="md:px-8 lg:px-16 py-10">
+    <section className="py-10 px-4  max-w-360 mx-auto md:px-6 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-7">
         <h2 className="text-[28px] font-fraunces text-[#0A0A0A]">All Templates</h2>
         <span className="text-[11px] uppercase tracking-[1px] text-[#8A8A85]">
