@@ -257,6 +257,19 @@ html {
   --color-text-on-black: #ffffff;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 50s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
