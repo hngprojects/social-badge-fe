@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import cardImage from '../../../../../public/assets/landing-page/Hero section cards.png';
 
 const STATS = [
   { value: '1,240', label: 'Templates' },
@@ -18,6 +17,7 @@ const ExploreHero = () => {
         className="absolute -left-16 top-0 pointer-events-none select-none"
         aria-hidden="true"
       />
+
       <Image
         src="/assets/landing-page/social-badge-icon-2.png"
         alt=""
@@ -30,17 +30,17 @@ const ExploreHero = () => {
       <div className="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center">
         {/* Left: Text + Search + Stats */}
         <div className="flex flex-col gap-6">
-          <h1 className="font-fraunces text-[96px] text=[#525252] leading-[1] tracking-[-0.65px] font-semibold">
+          <h1 className="font-fraunces text-[96px] text-[#525252] leading-none tracking-[-0.65px] font-semibold">
             Explore <span className="text-[#fa5424] italic block">templates.</span>
           </h1>
 
-          <p className="max-w-[590px] text-[#5B4137]">
+          <p className="max-w-147.5 text-[#5B4137]">
             Browse hundreds of badge templates made by organizers just like you. One click to make
             it yours.
           </p>
 
           {/* Search */}
-          <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 max-w-[455px]">
+          <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 max-w-113.75">
             <input
               type="text"
               placeholder="Search templates, events, styles"
@@ -72,11 +72,11 @@ const ExploreHero = () => {
         {/* Right: Badge image */}
         <div className="flex justify-end">
           <Image
-            src={cardImage}
+            src="/assets/landing-page/Hero section cards.png"
             alt="Badge template previews"
             width={690}
             height={577}
-            className="w-full max-w-[690px] h-auto object-contain"
+            className="w-full max-w-172.5 h-auto object-contain"
             priority
           />
         </div>

@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
-import ctaArrow from '../../../../../public/assets/icons/round-arrow-right-up.svg';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
@@ -177,7 +176,9 @@ export default function ContactForm() {
           className="w-full h-14 text-base font-light mt-1 gap-2 disabled:opacity-60"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
-          {!isSubmitting && <Image src={ctaArrow} alt="" width={20} height={20} />}
+          {!isSubmitting && (
+            <Image src="/assets/icons/round-arrow-right-up.svg" alt="" width={20} height={20} />
+          )}
         </Button>
 
         <p className="text-center text-sm text-[#8A8A85]">

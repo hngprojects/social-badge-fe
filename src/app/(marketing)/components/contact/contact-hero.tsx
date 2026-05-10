@@ -1,21 +1,18 @@
 import Image from 'next/image';
 
-import logoFloat from '../../../../../public/assets/landing-page/logo-float-low-bg.svg';
-import logoBg from '../../../../../public/assets/landing-page/landing-logo-bgg.svg';
-
 export default function ContactHero() {
   return (
     <section className="bg-[#F9F9F9]">
       <div className="max-w-360 mx-auto px-6 md:px-10 lg:px-16 overflow-hidden relative md:py-18">
         <Image
-          src={logoFloat}
+          src="/assets/landing-page/logo-float-low-bg.svg"
           alt=""
           width={400}
           height={400}
           className="absolute -my-4 scale-[1.1] top-8 -left-10.5 lg:-top-2.5 lg:-left-9.5 pointer-events-none select-none"
         />
         <Image
-          src={logoBg}
+          src="/assets/landing-page/landing-logo-bgg.svg"
           alt=""
           width={400}
           height={400}
