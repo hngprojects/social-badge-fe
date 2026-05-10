@@ -19,7 +19,9 @@ export default function TrustedBy() {
             <Image
               src="/assets/icons/star-icon.svg"
               alt="star-icon"
-              className="w-2 h-2 lg:w-4.5 "
+              width={18}
+              height={18}
+              className="w-2 h-2 lg:w-4.5"
             />
           </div>
         ))}
