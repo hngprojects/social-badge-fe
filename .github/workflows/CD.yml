@@ -16,12 +16,18 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/social-badge-fe
-            git pull origin ${{ github.ref_name }}
-            pnpm install --frozen-lockfile
-            pnpm build
+            export PATH="$HOME/.local/bin:$HOME/.local/share/pnpm:$PATH"
+            source $HOME/.local/bin/env 2>/dev/null || true
             if [ "${{ github.ref_name }}" = "main" ]; then
+              cd ~/social-badge-fe
+              git pull origin main
+              pnpm install --frozen-lockfile
+              pnpm build
               pm2 restart social-badge-fe
             else
+              cd ~/social-badge-fe-staging
+              git pull origin staging
+              pnpm install --frozen-lockfile
+              pnpm build
               pm2 restart social-badge-staging
             fi
