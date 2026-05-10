@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import starIcon from '../../../../public/assets/icons/star-icon.svg';
-import './Trusted-by.css';
 
 export default function TrustedBy() {
   const trustedBy = [
