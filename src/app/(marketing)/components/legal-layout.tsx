@@ -2,9 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logoFloat from '../../../../public/assets/landing-page/logo-float-low-bg.svg';
-import logoBg from '../../../../public/assets/landing-page/landing-logo-bgg.svg';
-
 interface LegalLayoutProps {
   title: string;
   titleHighlight: string;
@@ -28,7 +25,7 @@ export default function LegalLayout({
       <section className="relative overflow-hidden bg-[#f9f9f9] dark:bg-background py-16 md:py-24 lg:py-32">
         {/* Background Images */}
         <Image
-          src={logoFloat}
+          src="/assets/landing-page/logo-float-low-bg.svg"
           alt="background shape"
           width={400}
           height={400}
@@ -36,7 +33,7 @@ export default function LegalLayout({
           className="absolute scale-[0.5] md:scale-[1.1] -top-60 -left-24 md:-my-4 md:top-8 md:-left-10.5 lg:-top-2.5 lg:-left-9.5 opacity-60"
         />
         <Image
-          src={logoBg}
+          src="/assets/landing-page/landing-logo-bgg.svg"
           alt="background shape"
           width={400}
           height={400}
@@ -87,7 +84,7 @@ export default function LegalLayout({
             </div>
 
             {/* Policy Content */}
-            <div className="text-sm md:text-[15px] leading-relaxed text-muted-foreground flex flex-col gap-10 pb-12 [&>section:not(:first-child)]:border-t [&>section:not(:first-child)]:border-[color:var(--border)] [&>section:not(:first-child)]:pt-10">
+            <div className="text-sm md:text-[15px] leading-relaxed text-muted-foreground flex flex-col gap-10 pb-12 [&>section:not(:first-child)]:border-t [&>section:not(:first-child)]:border-border [&>section:not(:first-child)]:pt-10">
               {children}
             </div>
           </div>
