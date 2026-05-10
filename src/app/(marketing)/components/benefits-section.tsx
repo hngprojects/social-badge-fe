@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const BENEFITS_DATA = [
   {
@@ -35,7 +34,7 @@ const BENEFITS_DATA = [
 const BenefitSection = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="py-12 md:px-6 md:py-24 max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 mx-auto font-sans  ">
+      <div className="py-12 md:px-6 md:py-24 max-w-360 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* RIGHT SIDE*/}
           <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
@@ -43,7 +42,7 @@ const BenefitSection = () => {
             <header className="space-y-4 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#FF4F11]" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00000099] font-fraunces">
+                <span className="text-xs  uppercase tracking-[1.54px] text-[#7A7A7A] ">
                   Benefits
                 </span>
               </div>
@@ -70,7 +69,7 @@ const BenefitSection = () => {
                 >
                   <div className="shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center">
                     <div className="shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF4F11] flex items-center justify-center shadow-lg shadow-orange-100">
-                      <div className="relative w-[24px] h-[24px] md:w-[28px] md:h-[28px]">
+                      <div className="relative w-6 h-6 md:w-7 md:h-7">
                         <Image
                           src="/assets/icons/Icon-Button.svg"
                           alt="Checkmark"
@@ -97,9 +96,9 @@ const BenefitSection = () => {
           </div>
 
           {/* LEFT SIDE: Back to the original single container */}
-          <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0 lg:mt-[120px]">
-            <div className="relative w-full max-w-[640px]">
-              <div className="relative rounded-3xl transition-transform hover:scale-[1.02] duration-500 h-[320px] md:h-auto md:aspect-square p-1 md:p-6 overflow-hidden">
+          <div className="w-full md:w-1/2 flex lg:justify-center order-2 lg:order-1 -mt-4 md:mt-0 lg:mt-30">
+            <div className="relative w-full max-w-160">
+              <div className="relative rounded-3xl transition-transform hover:scale-[1.02] duration-500 h-80 md:h-auto md:aspect-square p-1 md:p-6 overflow-hidden">
                 <div className="relative w-full h-full">
                   <Image
                     src="/assets/landing-page/benefit-cards.png"
