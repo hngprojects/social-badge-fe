@@ -3,27 +3,29 @@ import StatusIcon from './status-icon';
 type CellValue = string;
 
 function TableCell({ value }: { value: CellValue }) {
-  if (value === 'check') return <StatusIcon type="check" />;
-  if (value === 'cross') return <StatusIcon type="cross" />;
+  if (value === 'check') return <StatusIcon type="check" className="bg-green-500" />;
+  if (value === 'cross') return <StatusIcon type="cross" className="bg-red-500" />;
   return <span className="text-[13px] text-[#555]">{value}</span>;
 }
 
 export default function ComparisonTable() {
   return (
-    <section className="py-18 px-6 max-w-5xl mx-auto text-center">
-      <h2 className="text-[clamp(22px,3vw,32px)] font-extrabold tracking-tight mb-2">
+    <section className="lg:my-[140px] md:my-[100px] my-12 w-[80%] max-w-[1090] mx-auto text-center">
+      <h2 className="text-[clamp(22px,3vw,32px)] tracking-tight mb-2 font-fraunces">
         Compare plans and features
       </h2>
       <p className="text-sm text-[#888] mb-10">Choose the perfect plan for your journey</p>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto rounded-2xl border border-[#e8e8e8]">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr>
-              {['Feature / Plan', 'Free Plan', 'Pro Plan', 'Team Plan'].map((header) => (
+              {['Feature/ Plan', 'Free Plan', 'Pro Plan', 'Team Plan'].map((header, i) => (
                 <th
                   key={header}
-                  className="px-4 py-3.5 text-left font-bold text-[#111] border-b-2 border-[#f0ece8] bg-[#fafafa] whitespace-nowrap"
+                  className={`h-[94px] px-6 py-5 font-bold text-[#111] border-b border-[#e8e8e8] bg-white whitespace-nowrap
+  ${i === 0 ? 'text-left sticky left-0 z-10 bg-white' : 'text-center border-l border-[#e8e8e8] w-[252px] min-w-[105px]'}
+`}
                 >
                   {header}
                 </th>
@@ -32,13 +34,21 @@ export default function ComparisonTable() {
           </thead>
           <tbody>
             {COMPARISON_ROWS.map((row, i) => (
-              <tr key={row.feature} className={i % 2 === 0 ? 'bg-[#fdf9f7]' : ''}>
-                <td className="px-4 py-3.5 font-medium text-[#111] border-b border-[#f4f0ed] whitespace-nowrap">
+              <tr
+                key={row.feature}
+                className={`h-[72px] ${i % 2 === 0 ? 'bg-[#f8f8f8]' : 'bg-white'}`}
+              >
+                <td className="px-6 py-5 font-medium text-[#111] border-b border-[#e8e8e8] whitespace-nowrap text-left sticky left-0 z-10 bg-inherit">
                   {row.feature}
                 </td>
                 {(['free', 'pro', 'team'] as const).map((plan) => (
-                  <td key={plan} className="px-4 py-3.5 text-[#444] border-b border-[#f4f0ed]">
-                    <TableCell value={row[plan]} />
+                  <td
+                    key={plan}
+                    className="min-w-[130px] px-6 py-5 border-b border-l border-[#e8e8e8] text-center"
+                  >
+                    <div className="flex justify-center items-center">
+                      <TableCell value={row[plan]} />
+                    </div>
                   </td>
                 ))}
               </tr>

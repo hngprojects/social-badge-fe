@@ -5,15 +5,16 @@ import { BillingCycle } from './types/pricing';
 import PricingToggle from '../components/pricing/pricing-toggle';
 import PricingGrid from '../components/pricing/pricing-grid';
 import ComparisonTable from '../components/pricing/comparison-table';
+import FAQSection from '../components/pricing/faq-section';
 
 export default function PricingPage() {
   const [billing, setBilling] = useState<BillingCycle>('monthly');
 
   return (
-    <div className="font-sans bg-white text-[#111] md:h-272.5">
+    <div className="font-sans bg-white text-[#111] ">
       {/* Hero */}
       <section
-        className="px-6 py-18 text-center bg-cover"
+        className="px-6 py-18 text-center bg-cover md:h-272.5"
         style={{ backgroundImage: "url('/assets/pricing/gradientBg.jpg')" }}
       >
         <div className="w-full max-w-272.5 mx-auto">
@@ -31,8 +32,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Feature comparison */}
       <ComparisonTable />
+      <FAQSection />
     </div>
   );
 }

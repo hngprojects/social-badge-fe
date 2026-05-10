@@ -8,7 +8,7 @@ type PricingGridProps = {
 
 export default function PricingGrid({ billing }: PricingGridProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6  mx-auto min-h-147">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 justify-items-center  mx-auto min-h-147">
       {PLANS.map((plan) => (
         <PricingCard key={plan.id} plan={plan} billing={billing} />
       ))}
