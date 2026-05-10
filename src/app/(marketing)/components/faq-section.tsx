@@ -55,7 +55,7 @@ export default function FAQ() {
       <div className="mb-10 md:mb-20 text-center">
         <div className="font-sans tracking-widest text-muted-foreground text-[14px] md:text-[11px] items-center flex justify-center mb-6">
           <span className="inline-block h-2 w-2 rounded-full bg-primary mr-2 text-sm" />
-          <span className="hidden md:block">FAQ</span>
+          <span className="hidden md:block">FAQS</span>
           <span className="block md:hidden">FREQUENTLY ASKED QUESTIONS</span>
         </div>
         <div className="font-fraunces justify-center text-center leading-18.5 text-3xl md:text-[76px] flex flex-row md:flex-col gap-2 px-4">
