@@ -98,7 +98,7 @@ const Templates = () => {
 
         {/* Section title */}
         <h1 className="font-semibold text-[#525252] text-[clamp(2rem,6vw,4.5rem)] my-4 text-center md:text-left leading-[0.95]">
-          Browse Template <span className="font-fraunces text-primary italic">section</span>
+          Browse Template <span className="font-fraunces italic text-[#fa5424]">section</span>
         </h1>
 
         {/* Cards stack */}
@@ -106,13 +106,13 @@ const Templates = () => {
           {templates.map((template, index) => (
             <div
               key={template.id}
-              className={`relative h-[420px] flex flex-col rounded-[12px] border border-[#EAEAE6] overflow-hidden ${
+              className={`relative h-105 flex flex-col rounded-[12px] border border-[#EAEAE6] overflow-hidden ${
                 index >= 3 ? 'hidden md:flex' : 'flex'
               }`}
             >
               {/* Tag */}
               {template.tag && (
-                <span className="absolute z-10 top-4 font-mono left-4 text-[9px] uppercase tracking-[1px] bg-primary rounded-full py-[4px] px-[10px] text-white">
+                <span className="absolute z-10 top-4 font-mono left-4 text-[9px] uppercase tracking-[1px] bg-primary rounded-full py-1 px-2.5 text-white">
                   {template.tag}
                 </span>
               )}

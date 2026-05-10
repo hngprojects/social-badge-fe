@@ -26,11 +26,11 @@ export default function TryItNow() {
 
   return (
     <section className="bg-[#f9f9f9]">
-      <div className="w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8  mx-auto md:h-[944px] text-center md:text-left">
+      <div className="w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8  mx-auto md:h-236 text-center md:text-left">
         {/* Label */}
         <div className="flex items-center gap-2 mb-4 not-md:justify-center">
           <div className="w-2 h-2 bg-orange-600 rounded "></div>
-          <p className="text-black/60 text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left ">
+          <p className="text-[#7A7A7A] text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left ">
             Try it now
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function TryItNow() {
           Make one. <span className="italic font-fraunces text-[#FF4F1F] ">right now.</span>
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-8 items-start mt-17.5 md:h-[767px]">
+        <div className="flex flex-col md:flex-row gap-8 items-start mt-17.5 md:h-191.75">
           <div className="w-full md:[576px] h-full">
             <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-75 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)]">
               <BadgePreview ref={previewRef} badge={badge} />

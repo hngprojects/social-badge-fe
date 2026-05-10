@@ -99,16 +99,16 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
   };
 
   return (
-    <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-[599px]">
+    <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-149.75">
       <div className="max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <span className="inline-flex items-center gap-2 text-sm text-[11px] font-medium font-sans tracking-widest text-[#2e2e2e] uppercase mb-8">
+          <span className="inline-flex items-center gap-2 text-sm text-[11px] font-medium tracking-[1.54px]  text-[#7A7A7A] uppercase mb-8">
             <span className="w-2 h-2 bg-[#ff4f1f] rounded-full"></span>
             Feedback
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-sans font-semibold  text-[#3d3d3d]">
-            Organizers who <span className="italic text-[#ff6b4a] font-fraunces">get it.</span>
+            Organizers who <span className="italic text-[#fa5424] font-fraunces">get it.</span>
           </h2>
         </div>
 
@@ -122,7 +122,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
               }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-[300px]">
+                <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-75">
                   <div
                     className={`${getCardColor(index)} rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
                   >
