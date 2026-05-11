@@ -74,7 +74,7 @@ const ExploreHero = () => {
           {/* Right: Badge image */}
           <div className="relative justify-center min-[1150px]:min-h-[600px]">
             <Image
-              src="/assets/landing-page/Group 17.png"
+              src="/assets/landing-page/group-17.png"
               alt="Badge template previews"
               width={750}
               height={600}
@@ -83,7 +83,7 @@ const ExploreHero = () => {
             />
             <div className="flex justify-center min-[1150px]:hidden">
               <Image
-                src="/assets/landing-page/Group 17 (2).png"
+                src="/assets/landing-page/group-17-2.png"
                 alt="Badge template previews"
                 width={690}
                 height={600}
