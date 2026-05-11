@@ -13,22 +13,21 @@ export default function PricingPage() {
   return (
     <div className="font-sans bg-white text-[#111] ">
       {/* Hero */}
-      <section
-        className="px-6 py-18 text-center bg-cover md:h-272.5"
-        style={{ backgroundImage: "url('/assets/pricing/gradientBg.jpg')" }}
-      >
+      <section className="px-[16px] lg:px-6 py-18 text-center bg-center bg-cover bg-none md:bg-[url('/assets/pricing/gradientBg.jpg')]">
         <div className="w-full max-w-272.5 mx-auto">
-          <h1 className="text-[clamp(32px,5vw,52px)] font-normal leading-16 tracking-[-0.02em] mb-2 font-fraunces">
-            Create and share <em className="not-italic text-orange-500">badges</em>
+          <h1 className="text-[clamp(28px,5vw,64px)] leading-[29px] md:leading-[64px] tracking-[-2px] mb-2 font-fraunces">
+            Create and share <em className="italic text-orange-500">badges</em>
             <br />
             in seconds
           </h1>
-          <p className="text-[15px] text-[#757575] mb-12">
-            Start free and upgrade as your needs grow
+          <p className="text-[14px] md:text-[18px] text-[#757575] mb-9">
+            Start free and upgrade as your needs grow.
           </p>
 
-          <PricingToggle billing={billing} onChange={setBilling} />
-          <PricingGrid billing={billing} />
+          <div>
+            <PricingToggle billing={billing} onChange={setBilling} />
+            <PricingGrid billing={billing} />
+          </div>
         </div>
       </section>
 

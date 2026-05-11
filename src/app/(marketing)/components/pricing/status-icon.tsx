@@ -10,7 +10,7 @@ export default function StatusIcon({ type, className }: StatusIconProps) {
 
   return (
     <span
-      className={`inline-flex items-center justify-center w-4.5 h-4.5 rounded-full shrink-0 ${className ?? defaultBg}`}
+      className={`inline-flex items-center justify-center w-6 h-6 rounded-full shrink-0 ${className ?? defaultBg}`}
     >
       {isCheck ? (
         <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
