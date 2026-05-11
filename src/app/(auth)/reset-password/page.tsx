@@ -84,7 +84,7 @@ const Page = () => {
             </div>
           </div>
 
-          <Button type="submit" name="Reset & save password" />
+          <Button type="submit" name="Reset & save password" value={'Reset & save password'} />
         </form>
 
         <div className="text-center">

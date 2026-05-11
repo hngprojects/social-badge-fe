@@ -13,15 +13,12 @@ export const useResetPassword = () => {
     mutationFn: resetPasswordApi,
 
     onSuccess: (data: { message?: string }) => {
-      console.log(data);
-      toast.success(data?.message || 'Password reset successful! Please check your email.');
+      toast.success(data?.message || 'Password reset successful! You can now log in.');
     },
     onError: (error) => {
       const axiosError = error as AxiosError<ApiError>;
-
       const message =
         axiosError.response?.data?.message || 'Failed to reset password. Please try again.';
-
       toast.error(message);
     },
   });
