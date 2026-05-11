@@ -113,16 +113,19 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
-          <div className="overflow-hidden">
+        <div className="relative ">
+          <div className="overflow-y-auto overflow-x-hidden scrollbar-hide md:overflow-hidden max-h-[600px] md:max-h-none">
             <div
-              className="flex transition-transform duration-500 ease-out gap-3"
+              className="flex flex-col md:flex-row md:transition-transform md:duration-500 md:ease-out gap-3"
               style={{
-                transform: `translateX(-${current * slideTransformPercentage}%)`,
+                transform:
+                  window.innerWidth >= 768
+                    ? `translateX(-${current * slideTransformPercentage}%)`
+                    : 'none',
               }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-75">
+                <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-auto md:h-75">
                   <div
                     className={`${getCardColor(index)} rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
                   >
@@ -132,10 +135,10 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
                     </p>
 
                     {/* Divider */}
-                    <div className="border-b border-[#1a1612] border-dashed mb-3"></div>
+                    <div className="border-b border-[#1a1612] border-dashed mb-2"></div>
 
                     {/* Author Info */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 mt-2">
                       <div className="shrink-0">
                         <div className="w-14 h-14 rounded-full bg-[#2d2d2d] flex items-center justify-center">
                           <span className="text-white font-bold text-sm tracking-wider">
@@ -159,7 +162,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center justify-between mt-10">
+          <div className="hidden md:flex items-center justify-between mt-10">
             {/* Dot Indicators */}
             <div className="flex gap-2">
               {Array.from({ length: Math.ceil(testimonials.length / slidesPerView) }).map(
