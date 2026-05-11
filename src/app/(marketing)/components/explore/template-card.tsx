@@ -18,7 +18,7 @@ const TemplateCard = ({ template, index }: { template: Template; index: number }
   return (
     <div
       className={`relative h-[420px] flex flex-col rounded-[12px] border border-[#EAEAE6] overflow-hidden ${
-        index >= 3 ? 'hidden md:flex' : 'flex'
+        index >= 7 ? 'hidden md:flex' : 'flex'
       }`}
     >
       {/* Tag */}
@@ -33,6 +33,7 @@ const TemplateCard = ({ template, index }: { template: Template; index: number }
           src={template.image}
           alt={template.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
           className={`object-contain ${template.hasShadow ? 'p-0 pt-2' : 'p-4'}`}
         />
       </div>

@@ -1,6 +1,7 @@
 import BenefitSection from './components/benefits-section';
 import FAQ from './components/faq-section';
 import Feature from './components/features-section';
+import HashScroll from './components/hash-scroll';
 import Hero from './components/hero-section';
 import Templates from './components/templates-section';
 import Testimonials from './components/testimonials-section';
@@ -10,6 +11,7 @@ import TryItNow from './components/try-it-now-section';
 export default function LandingPage() {
   return (
     <div>
+      <HashScroll/>
       <Hero />
       <TrustedBy />
       <Feature />

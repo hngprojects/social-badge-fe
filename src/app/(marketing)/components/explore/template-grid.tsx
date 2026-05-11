@@ -128,15 +128,15 @@ const templates: Template[] = [
 
 const TemplateGrid = () => {
   return (
-    <section className="py-10 px-4  max-w-360 mx-auto md:px-6 sm:px-6 lg:px-8">
+    <section className="py-10 max-w-[1376px] px-[16px] md:px-[24px] mx-auto">
       <div className="flex items-center justify-between mb-7">
-        <h2 className="text-[28px] font-fraunces text-[#0A0A0A]">All Templates</h2>
+        <h2 className="text-[18px] md:text-[28px] font-fraunces text-[#0A0A0A]">All Templates</h2>
         <span className="text-[11px] uppercase tracking-[1px] text-[#8A8A85]">
           {templates.length} Templates
         </span>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {templates.map((template, index) => (
           <TemplateCard key={template.id} template={template} index={index} />
         ))}
@@ -145,7 +145,7 @@ const TemplateGrid = () => {
       <div className="flex justify-center mt-12">
         <button
           type="button"
-          className="bg-[#0A0A0A] text-background text-[13px] tracking-[0.5px] font-semiBold px-8 py-3 rounded-full hover:opacity-80 transition-opacity"
+          className="bg-[#0A0A0A] text-background text-[12px] md:text-[13px] tracking-[0.5px] font-semiBold px-8 py-3 rounded-full hover:opacity-80 transition-opacity"
         >
           LOAD MORE TEMPLATES ↓
         </button>
