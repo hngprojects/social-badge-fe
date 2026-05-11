@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'Explore', href: '/explore' },
-  { label: 'Features', href: '#feature-section' },
+  { label: 'Features', href: '/#feature-section' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact us', href: '/contact' },
 ] as const;
@@ -61,10 +61,22 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
             {NAV_LINKS.map(({ label, href }) => {
               const isActive = pathname === href;
+              const isFeatures = href === '/#feature-section';
+
+              const handleClick = (e: React.MouseEvent) => {
+                if (isFeatures && pathname === '/') {
+                  e.preventDefault();
+                  document
+                    .getElementById('feature-section')
+                    ?.scrollIntoView({ behavior: 'smooth' });
+                }
+              };
+
               return (
                 <Link
                   key={label}
                   href={href}
+                  onClick={handleClick}
                   className={cn(
                     'relative px-4 py-2 text-base font-medium rounded-lg',
                     'transition-colors duration-150',
@@ -72,7 +84,6 @@ export default function Header() {
                   )}
                 >
                   {label}
-                  {/* Active underline indicator */}
                   {isActive && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 rounded-full bg-primary" />
                   )}
@@ -134,6 +145,7 @@ export default function Header() {
             >
               <VisuallyHidden>
                 <SheetTitle>Navigation menu</SheetTitle>
+                <SheetDescription>Main navigation links for Social Badge</SheetDescription>
               </VisuallyHidden>
 
               <div className="flex flex-col h-full">
@@ -153,23 +165,41 @@ export default function Header() {
 
                 {/* Mobile nav links */}
                 <nav className="flex flex-col gap-1 px-3 py-4 flex-1">
-                  {NAV_LINKS.map(({ label, href }) => {
-                    const isActive = pathname === href;
-                    return (
-                      <Link
-                        key={label}
-                        href={href}
-                        onClick={() => setMobileOpen(false)}
-                        className={cn(
-                          'px-4 py-3 text-[15px] font-medium rounded-xl',
-                          'transition-colors duration-150',
-                          isActive ? 'text-primary bg-secondary' : 'text-foreground hover:bg-muted',
-                        )}
-                      >
-                        {label}
-                      </Link>
-                    );
-                  })}
+                  {/* Mobile nav links */}
+                  <nav className="flex flex-col gap-1 px-3 py-4 flex-1">
+                    {NAV_LINKS.map(({ label, href }) => {
+                      const isActive = pathname === href;
+                      const isFeatures = href === '/#feature-section';
+
+                      const handleClick = () => {
+                        setMobileOpen(false);
+                        if (isFeatures && pathname === '/') {
+                          setTimeout(() => {
+                            document
+                              .getElementById('feature-section')
+                              ?.scrollIntoView({ behavior: 'smooth' });
+                          }, 300);
+                        }
+                      };
+
+                      return (
+                        <Link
+                          key={label}
+                          href={href}
+                          onClick={handleClick}
+                          className={cn(
+                            'px-4 py-3 text-[15px] font-medium rounded-xl',
+                            'transition-colors duration-150',
+                            isActive
+                              ? 'text-primary bg-secondary'
+                              : 'text-foreground hover:bg-muted',
+                          )}
+                        >
+                          {label}
+                        </Link>
+                      );
+                    })}
+                  </nav>
                 </nav>
 
                 {/* Mobile CTAs */}
