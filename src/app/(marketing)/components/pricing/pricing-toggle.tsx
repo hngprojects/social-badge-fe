@@ -13,7 +13,7 @@ export default function PricingToggle({ billing, onChange }: PricingToggleProps)
           <button
             key={cycle}
             onClick={() => onChange(cycle)}
-            className={`h-9 px-3 py-2 rounded-full text-[16px] flex items-center gap-2 font-medium transition-all capitalize cursor-pointer ${
+            className={`h-9 px-3 py-2 rounded-full text-[12px] md:text-[16px] flex items-center gap-2 font-medium transition-all capitalize cursor-pointer ${
               billing === cycle
                 ? 'bg-[#e8501a] text-white font-semibold'
                 : 'bg-transparent text-[#555]'
