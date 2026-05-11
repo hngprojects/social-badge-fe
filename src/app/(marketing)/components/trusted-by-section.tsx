@@ -21,7 +21,7 @@ export default function TrustedBy() {
               alt="star-icon"
               width={18}
               height={18}
-              className="w-2 h-2 lg:w-4.5"
+              className="w-2 h-2 lg:w-4.5 lg:h-4.5"
             />
           </div>
         ))}
