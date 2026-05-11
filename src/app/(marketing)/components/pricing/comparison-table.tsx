@@ -6,7 +6,7 @@ type CellValue = string;
 function TableCell({ value }: { value: CellValue }) {
   if (value === 'check') return <StatusIcon type="check" className="bg-green-500" />;
   if (value === 'cross') return <StatusIcon type="cross" className="bg-red-500" />;
-  return <span className="text-sm md:text-md text-[#303030]">{value}</span>;
+  return <span className="text-[12px] md:text-md text-[#303030]">{value}</span>;
 }
 
 const PLANS = ['free', 'pro', 'team'] as const;
@@ -28,7 +28,7 @@ export default function ComparisonTable() {
               {['Feature / Plan', 'Free Plan', 'Pro Plan', 'Team Plan'].map((header, i) => (
                 <th
                   key={header}
-                  className={`py-4 md:py-5 font-medium text-[#161616] bg-[#F8F8F8] border-b border-[#B3B3B3]/40
+                  className={`py-4 md:py-5 text-[#161616] bg-[#F8F8F8] border-b border-[#B3B3B3]/40
                     ${
                       i === 0
                         ? 'px-3 md:px-6 text-left w-[120px] md:w-[334px] text-sm md:text-[24px] whitespace-normal'
@@ -49,7 +49,7 @@ export default function ComparisonTable() {
               return (
                 <tr key={row.feature} className={rowBg}>
                   <td
-                    className={`px-3 md:px-6 py-3 text-sm md:text-md text-[#121217] text-left leading-snug
+                    className={`px-3 md:px-6 py-3 text-[12px] md:text-md text-[#121217] text-left leading-snug
                       ${!isLast ? 'border-b border-[#B3B3B3]/40' : ''}`}
                   >
                     {row.feature}
