@@ -54,7 +54,8 @@ const Page = () => {
     signup(
       {
         email: data.email,
-        name: `${data.firstName} ${data.lastName}`,
+        first_name: data.first_name,
+        last_name: data.last_name,
         password: data.password,
       },
       {
@@ -80,31 +81,31 @@ const Page = () => {
             <div className="first flex justify-between gap-4 w-full ">
               <div className="w-full">
                 <AuthInput
-                  {...register('firstName', { required: 'First name is required' })}
+                  {...register('first_name', { required: 'First name is required' })}
                   type="first-name"
                   placeholder="John"
                   label={'First Name'}
                   disabled={isSubmitting}
-                  icon={errors.firstName ? <Icons.InfoCircle /> : null}
-                  className={errors.firstName ? 'border-[#EF4444]' : ''}
+                  icon={errors.first_name ? <Icons.InfoCircle /> : null}
+                  className={errors.first_name ? 'border-[#EF4444]' : ''}
                 />
-                {errors.firstName && (
-                  <p className="text-[#EF4444] text-xs mt-1">{errors.firstName.message}</p>
+                {errors.first_name && (
+                  <p className="text-[#EF4444] text-xs mt-1">{errors.first_name.message}</p>
                 )}
               </div>
 
               <div className="w-full">
                 <AuthInput
-                  {...register('lastName', { required: 'Last name is required' })}
+                  {...register('last_name', { required: 'Last name is required' })}
                   type="last-name"
                   placeholder="Doe"
                   label={'Last Name'}
                   disabled={isSubmitting}
-                  icon={errors.lastName ? <Icons.InfoCircle /> : null}
-                  className={errors.lastName ? 'border-[#EF4444]' : ''}
+                  icon={errors.last_name ? <Icons.InfoCircle /> : null}
+                  className={errors.last_name ? 'border-[#EF4444]' : ''}
                 />
-                {errors.lastName && (
-                  <p className="text-[#EF4444] text-xs mt-1">{errors.lastName.message}</p>
+                {errors.last_name && (
+                  <p className="text-[#EF4444] text-xs mt-1">{errors.last_name.message}</p>
                 )}
               </div>
             </div>

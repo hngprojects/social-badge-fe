@@ -1,7 +1,7 @@
 import { apiClient } from '@/lib/api/client';
-import { endpointSignupPayload, LoginPayload } from '../types';
+import { LoginPayload, SignupPayload } from '../types';
 
-export const signup = async (data: endpointSignupPayload) => {
+export const signup = async (data: SignupPayload) => {
   return apiClient('/auth/signup', {
     method: 'POST',
     data,

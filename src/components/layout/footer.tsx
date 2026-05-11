@@ -8,21 +8,20 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 
 const PRODUCT_LINKS = [
-  { label: 'Features', href: '/features' },
+  { label: 'Features', href: '#feature-section' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Explore', href: '/explore' },
-  { label: 'Features', href: '/features' },
 ] as const;
 
 const SUPPORT_LINKS = [
-  { label: 'FAQ', href: '/faq' },
+  { label: 'FAQ', href: '#faq-section' },
   { label: 'Contact Us', href: '/contact' },
 ] as const;
 
 const LEGAL_LINKS = [
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
-  { label: 'Cookies', href: '/cookies' },
+  { label: 'Cookies', href: '/privacy' },
 ] as const;
 
 export default function Footer() {
