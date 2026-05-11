@@ -36,8 +36,8 @@ function DecorativeBottomSquare({ className }: { className: string }) {
                 key={`${ri}-${ci}`}
                 className={
                   cell === 1
-                    ? 'min-h-0 min-w-0 rounded-[2px] bg-white/60'
-                    : 'min-h-0 min-w-0 rounded-[2px] bg-transparent'
+                    ? 'min-h-0 min-w-0 rounded-xs bg-white/60'
+                    : 'min-h-0 min-w-0 rounded-xs bg-transparent'
                 }
               />
             )),

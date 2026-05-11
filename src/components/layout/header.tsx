@@ -106,7 +106,7 @@ export default function Header() {
             </Link>
 
             <Button asChild variant="cta" size="xl">
-              <Link href="/start">
+              <Link href="/signup">
                 Start Building
                 <span className="inline-flex items-center justify-center">
                   <Image
@@ -225,7 +225,7 @@ export default function Header() {
                       'shadow-sm transition-all duration-150',
                     )}
                   >
-                    <Link href="/start" onClick={() => setMobileOpen(false)}>
+                    <Link href="/signup" onClick={() => setMobileOpen(false)}>
                       Start Building
                       <span className="inline-flex items-center justify-center">
                         <Image

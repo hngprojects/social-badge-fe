@@ -10,30 +10,36 @@ const FEATURES = [
   {
     id: '01',
     title: 'Unique badge builder',
-    imageUrl: 'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778206666/tb-1_ovhugn.jpg',
+    image: '/assets/landing-page/feature-1.png',
+    imageWidth: 1944,
+    imageHeight: 2392,
     description:
       'Every keystroke reflects instantly on the canvas. High-fidelity rendering ensures what you see is exactly what they share.',
   },
   {
     id: '02',
     title: 'Real-time live preview',
-    imageUrl: 'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778206666/tb-2_lh6gt4.jpg',
+    image: '/assets/landing-page/feature-2.png',
+    imageWidth: 1856,
+    imageHeight: 1952,
     description:
       'Changes appear instantly as organizers customize names, photos, and layouts, making every badge feel polished before it goes live.',
   },
   {
     id: '03',
     title: 'One-click social sharing',
-    imageUrl:
-      'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778280247/One-click_social_sharing_image_lyflfc.png',
+    image: '/assets/landing-page/feature-3.png',
+    imageWidth: 1863,
+    imageHeight: 2432,
     description:
       'Changes appear instantly as organizers customize names, photos, and layouts, making every badge feel polished before it goes live.',
   },
   {
     id: '04',
     title: 'Comprehensive analytics',
-    imageUrl:
-      'https://res.cloudinary.com/dpx9mb1oa/image/upload/v1778259506/Main_Dashboard_Container_ol638s.png',
+    image: '/assets/landing-page/feature-4.png',
+    imageWidth: 3808,
+    imageHeight: 3348,
     description:
       "Track badge views, shares, clicks, and engagement insights in real time to understand what's driving event visibility.",
   },
@@ -160,27 +166,25 @@ export default function Feature() {
                   transition={{ duration: 0.45, type: 'spring', stiffness: 200, damping: 22 }}
                   className="w-full flex justify-center"
                 >
-                  {activeFeature.id === '04' ? (
+                  <div
+                    className="
+        w-full
+        max-w-[320px] sm:max-w-[465px] lg:max-w-[752px]
+        rounded-[24px] sm:rounded-[32px] lg:rounded-[48px]
+        overflow-hidden
+        shadow-[0px_20px_40px_rgba(0,0,0,0.06)]
+      "
+                  >
                     <Image
-                      src={activeFeature.imageUrl as string}
+                      src={activeFeature.image as string}
                       alt={activeFeature.title}
-                      width={752}
-                      height={637}
-                      sizes="(max-width: 640px) 100%, (max-width: 1024px) 80%, 752px"
-                      className="w-full max-w-188 h-auto rounded-[48px]"
-                      priority={false}
+                      width={activeFeature.imageWidth}
+                      height={activeFeature.imageHeight}
+                      className="w-full h-auto object-contain"
+                      sizes="(max-width: 640px) 320px, (max-width: 1024px) 80vw, 752px"
+                      priority={activeFeature.id === '01'}
                     />
-                  ) : (
-                    <div className="relative w-full max-w-full sm:max-w-[465.6px] mx-auto aspect-464/488 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
-                      <Image
-                        src={activeFeature.imageUrl as string}
-                        alt={activeFeature.title}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 464px"
-                        priority={activeFeature.id === '01'}
-                      />
-                    </div>
-                  )}
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
