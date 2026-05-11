@@ -31,8 +31,6 @@ const stepsData: StepDataType[] = [
 ];
 
 const ThreeStepSection = () => {
-
-  
   return (
     <section className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-12 py-16 px-5 max-w-7xl mx-auto overflow-hidden">
       {/* THE HEADING (Mobile Only - appears at top) */}
