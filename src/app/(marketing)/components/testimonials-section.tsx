@@ -119,7 +119,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
               className="flex flex-col md:flex-row md:transition-transform md:duration-500 md:ease-out gap-3"
               style={{
                 transform:
-                  window.innerWidth >= 768
+                  slidesPerView > 1
                     ? `translateX(-${current * slideTransformPercentage}%)`
                     : 'none',
               }}
