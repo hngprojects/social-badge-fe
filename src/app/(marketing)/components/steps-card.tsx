@@ -8,7 +8,6 @@ interface StepCardProps {
 }
 
 const StepCard = ({ stepNumber, iconSrc, title, description }: StepCardProps) => {
-   
   return (
     <div className=" flex flex-col items-center p-8 bg-white rounded-[24px] border-[0.5px] border-[#D1D5DB]  max-w-[368px] text-center">
       {/* Icon Container */}
