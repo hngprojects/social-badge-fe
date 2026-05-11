@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const templates = [
   {
@@ -165,16 +166,21 @@ const Templates = () => {
         </div>
 
         {/* Explore button */}
-        <button className="flex items-center justify-end gap-2 text-right underline font-medium">
-          Explore more
-          <Image
-            src="/assets/landing-page/icons/Arrow Right.svg"
-            alt="Arrow"
-            width={20}
-            height={20}
-            className="w-5 h-5"
-          />
-        </button>
+        <Link
+          className="flex justify-end cursor-pointer opacity-[0.85] transition hover:opacity-[1]"
+          href="/explore"
+        >
+          <button className="flex items-center justify-end gap-2 text-right transition underline font-medium cursor-pointer">
+            Explore more
+            <Image
+              src="/assets/landing-page/icons/Arrow Right.svg"
+              alt="Arrow"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+          </button>
+        </Link>
       </div>
     </section>
   );
