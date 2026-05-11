@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: '#feature-section' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/flaretagme/' },
   { label: 'Instagram', href: 'https://www.instagram.com/flaretagme/' },
   { label: 'Facebook', href: 'https://web.facebook.com/profile.php?id=61589456016397' },
   { label: 'X (Twitter) ', href: 'https://x.com/flaretagme' },
