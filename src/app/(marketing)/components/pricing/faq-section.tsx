@@ -9,7 +9,9 @@ export default function FAQSection() {
 
   return (
     <section className="px-[16px] lg:px-6 pb-20 max-w-[1090px] mx-auto text-center">
-      <h2 className="text-[clamp(28px,3vw,40px)] mb-3 leading-[1.5] font-fraunces">Frequently Asked Questions</h2>
+      <h2 className="text-[clamp(28px,3vw,40px)] mb-3 leading-[1.5] font-fraunces">
+        Frequently Asked Questions
+      </h2>
 
       <div className="text-left w-full max-w-220 mx-auto">
         {FAQ_DATA.map((item, i) => {

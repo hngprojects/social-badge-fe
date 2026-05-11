@@ -17,7 +17,9 @@ export default function ComparisonTable() {
       <h2 className="text-[clamp(28px,3vw,40px)] mb-3 leading-[1.5] font-fraunces">
         Compare plans and features
       </h2>
-      <p className="text-sm md:text-md text-[#888] mb-12">Choose the perfect plan for your journey</p>
+      <p className="text-sm md:text-md text-[#888] mb-12">
+        Choose the perfect plan for your journey
+      </p>
 
       <div className="overflow-x-auto [-webkit-overflow-scrolling:touch] border border-[#B3B3B3]/40 rounded-[16px]">
         <table className="w-full border-collapse table-fixed min-w-[560px]">
@@ -27,9 +29,10 @@ export default function ComparisonTable() {
                 <th
                   key={header}
                   className={`py-4 md:py-5 font-medium text-[#161616] bg-[#F8F8F8] border-b border-[#B3B3B3]/40
-                    ${i === 0
-                      ? 'px-3 md:px-6 text-left w-[120px] md:w-[334px] text-sm md:text-[24px] whitespace-normal'
-                      : 'px-2 md:px-6 text-center border-l border-[#B3B3B3]/40 text-sm md:text-[24px] whitespace-normal'
+                    ${
+                      i === 0
+                        ? 'px-3 md:px-6 text-left w-[120px] md:w-[334px] text-sm md:text-[24px] whitespace-normal'
+                        : 'px-2 md:px-6 text-center border-l border-[#B3B3B3]/40 text-sm md:text-[24px] whitespace-normal'
                     }`}
                 >
                   {header}
