@@ -3,8 +3,11 @@ import { login as loginApi } from '../services/auth';
 import { toast } from 'sonner';
 import { AxiosError } from 'axios';
 import { ApiError } from '../types';
+import { useRouter } from 'next/navigation';
 
 export const useLogin = () => {
+  const router = useRouter();
+
   const {
     mutate: login,
     isPending: isLoading,
@@ -12,9 +15,9 @@ export const useLogin = () => {
   } = useMutation({
     mutationFn: loginApi,
 
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
       toast.success('Login successful!');
+      router.push('/coming-soon');
     },
 
     onError: (error) => {
