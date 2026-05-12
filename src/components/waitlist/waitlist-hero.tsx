@@ -37,7 +37,7 @@ export default function WaitlistHero() {
     setIsSubmitting(true);
     // Mock API call
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    router.push('/waitlist/success');
+    router.push('/success');
   };
 
   return (
