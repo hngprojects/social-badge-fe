@@ -99,10 +99,10 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
   };
 
   return (
-    <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-149.75">
-      <div className="max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 mx-auto">
+    <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-16 px-4 min-h-149.75">
+      <div className="max-w-360 px-4 md:px-10 lg:px-30 mx-auto">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-16">
           <span className="inline-flex items-center gap-2 text-sm text-[11px] font-medium tracking-[1.54px]  text-[#7A7A7A] uppercase mb-8">
             <span className="w-2 h-2 bg-[#ff4f1f] rounded-full"></span>
             Feedback
@@ -114,9 +114,9 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
 
         {/* Carousel Container */}
         <div className="relative ">
-          <div className="overflow-y-auto overflow-x-hidden scrollbar-hide md:overflow-hidden max-h-[600px] md:max-h-none">
+          <div className="overflow-y-auto overflow-x-hidden scrollbar-hide md:overflow-hidden max-h-150 md:max-h-none">
             <div
-              className="flex flex-col md:flex-row md:transition-transform md:duration-500 md:ease-out gap-3"
+              className="flex flex-col md:flex-row md:transition-transform md:duration-500 md:ease-out gap-6"
               style={{
                 transform:
                   slidesPerView > 1
@@ -127,7 +127,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
               {testimonials.map((testimonial, index) => (
                 <div key={testimonial.id} className="w-full md:w-1/2 shrink-0 px-2 h-auto md:h-75">
                   <div
-                    className={`${getCardColor(index)} rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
+                    className={`${getCardColor(index)} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
                   >
                     {/* Quote */}
                     <p className="text-base md:text-[22px] text-[#3d3d3d] leading-relaxed mb-8 font-sans">
@@ -140,7 +140,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
                     {/* Author Info */}
                     <div className="flex items-center gap-3 mt-2">
                       <div className="shrink-0">
-                        <div className="w-14 h-14 rounded-full bg-[#2d2d2d] flex items-center justify-center">
+                        <div className="w-11 h-11 rounded-full bg-[#2d2d2d] flex items-center justify-center">
                           <span className="text-white font-bold text-sm tracking-wider">
                             {testimonial.initials}
                           </span>
