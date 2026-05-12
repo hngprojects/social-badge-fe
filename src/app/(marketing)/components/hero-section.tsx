@@ -29,13 +29,13 @@ export default function Hero() {
         {/* HEADER */}
         <div className="flex flex-1 flex-col items-center py-7.5 md:py-16 lg:py-35 lg:max-w-150 md:items-start">
           <div className=" mb-2 gap-2.5 flex items-center">
-            <div className="bg-[#ff4f1f] rounded-full w-2 h-2"> </div>{' '}
+            <div className="bg-primary rounded-full w-2 h-2"> </div>{' '}
             <p className="text-[11px] font-light tracking-[1.54px] ">FOR EVENT ORGANIZERS</p>
           </div>
 
           <h1 className="text-[clamp(32px,6vw,75px)] font-semibold text-center leading-12.5 text-pretty tracking-[-0.65px] md:text-left  lg:leading-18.5 lg:tracking-[-0.65px] lg:mt-3">
             Turn attendees into your{' '}
-            <span className="text-[#fa5424] italic font-fraunces">marketing </span>team.
+            <span className="text-primary italic font-fraunces">marketing </span>team.
           </h1>
           <div className="text-muted-foreground text-[12px] text-center mt-4 mb-8 md:text-left">
             <p>Design a branded badge once. Watch your participants share it everywhere.</p>

@@ -11,7 +11,7 @@ export default function ContactWays() {
 
       {/* Email card */}
       <div className="flex items-center gap-5 bg-[#F4F4F2] border border-[#EAEAE6] rounded-[14px] px-6 py-5">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#fa5424] shrink-0">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary shrink-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

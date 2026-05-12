@@ -18,8 +18,8 @@ const FilterTabs = () => {
 
   return (
     <div className="border-b border-[#0A0A0A]/10">
-      <div className="max-w-[1376px] mx-auto overflow-x-auto scrollbar-hide">
-        <div className="flex flex-nowrap items-center gap-3 px-[16px] md:px-[24px] py-3 md:py-7 min-w-max">
+      <div className="max-w-360 mx-auto overflow-x-auto scrollbar-hide">
+        <div className="flex flex-nowrap items-center gap-3 px-4 md:px-10 lg:px-30 py-3 md:py-7 min-w-max">
           {FILTERS.map((filter) => {
             const isActive = active === filter;
 

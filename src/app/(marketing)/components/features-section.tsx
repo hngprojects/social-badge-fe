@@ -57,16 +57,15 @@ export default function Feature() {
       <div className="mx-auto px-4 md:px-10 lg:px-30 max-w-360">
         <div className="w-full mx-auto">
           {/* ── Header ── */}
-          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-10 max-w-[745px] items-center md:items-start">
+          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-10 max-w-[750px] items-center md:items-start">
             <div className="flex items-center gap-3">
-              <div className="bg-[#ff4f1f] w-2 h-2 rounded-sm" />
+              <div className="bg-primary w-2 h-2 rounded-sm" />
               <span className="text-[11px] text-gray-400 tracking-[1.54px] uppercase">
                 FEATURES
               </span>
             </div>
-            <h2 className="font-semibold text-[clamp(28px,5vw,72px)] text-center md:text-left leading-[1.03] tracking-[-0.65px] text-[#525252]">
-              Pre-event hype <br className="hidden sm:block" /> shouldn&apos;t be{' '}
-              <span className="italic text-[#ff4f1f] font-fraunces">this</span> hard.
+            <h2 className="font-semibold text-[clamp(28px,5vw,75px)] text-center md:text-left leading-[1.03] tracking-[-0.65px] text-[#525252]">
+              Pre-event hype <br className="hidden sm:block" />shouldn&apos;t be{' '}<span className="italic text-primary font-fraunces">this</span> hard.
             </h2>
           </div>
 
@@ -104,21 +103,21 @@ export default function Feature() {
                     {/* Header Row */}
                     <div className="flex items-center gap-3 sm:gap-4 w-full relative z-10">
                       <span
-                        className={`font-bold text-sm tracking-wider transition-colors ${isActive ? 'text-[#ff4f1f]' : 'text-gray-400 group-hover:text-[#ff4f1f]/60'}`}
+                        className={`font-bold text-sm tracking-wider transition-colors ${isActive ? 'text-[#E86038]' : 'text-gray-400 group-hover:text-[#ff4f1f]/60'}`}
                       >
                         {feature.id}
                       </span>
                       <div
-                        className={`h-0.5 w-8 sm:w-10 transition-colors ${isActive ? 'bg-[#ff4f1f]' : 'bg-gray-200 group-hover:bg-[#ff4f1f]/30'}`}
+                        className={`h-0.5 w-8 sm:w-10 transition-colors ${isActive ? 'bg-[#E86038]' : 'bg-gray-200 group-hover:bg-[#ff4f1f]/30'}`}
                       />
                       {isActive && (
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#ff4f1f] shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#E86038] shrink-0" />
                       )}
                     </div>
 
                     {/* Title */}
                     <h3
-                      className={`font-fraunces text-left transition-colors mt-1 relative z-10 ${isActive ? 'text-lg sm:text-xl lg:text-2xl font-bold text-primary-800 leading-tight' : 'text-sm sm:text-base lg:text-[16px] font-normal text-[#5b4137] leading-relaxed group-hover:text-primary-800'}`}
+                      className={`font-fraunces text-left transition-colors mt-1 relative z-10 ${isActive ? 'text-lg sm:text-xl lg:text-2xl font-bold text-primary leading-tight' : 'text-sm sm:text-base lg:text-[16px] font-normal text-[#5b4137] leading-relaxed group-hover:text-primary-800'}`}
                     >
                       {feature.title}
                     </h3>

@@ -29,7 +29,7 @@ export default function TryItNow() {
       <div className="w-full max-w-360 px-4 md:px-10 lg:px-30 mx-auto text-center md:text-left">
         {/* Label */}
         <div className="flex items-center gap-2 mb-4 not-md:justify-center">
-          <div className="w-2 h-2 bg-orange-600 rounded "></div>
+          <div className="w-2 h-2 bg-primary rounded "></div>
           <p className="text-[#7A7A7A] text-xs font-normal font-['DM_Sans'] uppercase leading-4 tracking-wider text-center md:text-left ">
             Try it now
           </p>
@@ -37,7 +37,7 @@ export default function TryItNow() {
 
         {/* Heading */}
         <h2 className="font-semibold text-[clamp(28px,5vw,72px)] leading-[1.03] tracking-[-0.65px] text-neutral-900">
-          Make one. <span className="italic font-fraunces text-[#FF4F1F] ">right now.</span>
+          Make one. <span className="italic font-fraunces text-primary ">right now.</span>
         </h2>
 
         <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 items-stretch mt-[70px]">
