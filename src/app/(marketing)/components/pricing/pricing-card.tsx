@@ -12,36 +12,36 @@ export default function PricingCard({ plan, billing }: PricingCardProps) {
 
   return (
     <div
-      className={`min-h-117.5 min-w-[340px] max-w-[350px] relative  rounded-2xl p-6 text-left flex flex-col ${
+      className={`max-w-[350px] min-h-[584px] relative  rounded-2xl p-6 text-left flex flex-col ${
         plan.popular
-          ? 'border-2 border-[#e8501a] shadow-[0_4px_32px_rgba(232,80,26,0.12)] bg-primary-50'
-          : 'border border-[#f0ece8] shadow-[0_2px_16px_rgba(0,0,0,0.06)] bg-[#f8f8f8]'
+          ? 'border-2 border-primary bg-primary-50'
+          : 'border border-[#E5E7EB] bg-[#f8f8f8]'
       }`}
     >
       {plan.popular && (
         <>
-          <div className=" h-11 absolute -top-5.5 left-1/2 -translate-x-1/2 bg-primary-100 text-black text-xs font-bold px-5 rounded-full whitespace-nowrap flex justify-center items-center border border-primary-500">
+          <div className=" h-11 absolute -top-5.5 left-1/2 -translate-x-1/2 bg-primary-100 text-black text-md font-medium px-5 rounded-full whitespace-nowrap flex justify-center items-center border-2 border-primary-500">
             <span>Most Popular</span>
           </div>
           <div className="h-5.5"></div>
         </>
       )}
 
-      <p className="text-sm font-semibold text-[#333] mb-2">{plan.name}</p>
+      <p className="text-[24px] font-medium text-[#333] mb-2">{plan.name}</p>
 
       <div className="flex items-baseline gap-0.5 mb-1">
-        <span className="text-[48px] font-[500] text-[#111]">$</span>
-        <span className="text-[48px] font-[500] text-[#111] leading-none">{price}</span>
+        <span className="text-[48px] font-medium text-[#111]">$</span>
+        <span className="text-[48px] font-medium text-[#111] leading-none">{price}</span>
         <span className="text-[16px] text-[#757575] ml-0.5">/month</span>
       </div>
 
-      <p className="text-[13px] text-[#888]">{plan.description}</p>
+      <p className="text-md text-[#5A5A5A]">{plan.description}</p>
 
       <button
-        className={`w-full h-12.5 py-3 rounded-full text-sm font-semibold cursor-pointer transition-opacity my-6 ${
+        className={`w-full h-12.5 py-3 rounded-full text-md font-semibold cursor-pointer transition-all duration-200 my-6 ${
           isPrimary
-            ? 'bg-[#e8501a] text-white border-none'
-            : 'bg-transparent text-[#e8501a] border border-[#e8501a]'
+            ? 'bg-primary text-white border-none hover:opacity-90'
+            : 'bg-transparent text-primary border border-primary hover:bg-primary hover:text-white'
         }`}
       >
         {plan.cta}
@@ -49,9 +49,9 @@ export default function PricingCard({ plan, billing }: PricingCardProps) {
 
       <ul className="flex flex-col gap-4 list-none m-0 p-0">
         {plan.features.map((feature) => (
-          <li key={feature} className="flex items-center gap-2.5">
+          <li key={feature} className="flex items-center gap-2">
             <StatusIcon type="check" />
-            <span className="text-[13px] text-[#444]">{feature}</span>
+            <span className="text-[14px] leading-[20px] text-[#303030]">{feature}</span>
           </li>
         ))}
       </ul>
