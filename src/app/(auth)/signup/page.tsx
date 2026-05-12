@@ -137,11 +137,11 @@ const Page = () => {
                 id="email"
                 icon={errors.email ? <Icons.InfoCircle /> : null}
                 className={errors.email ? 'border-[#EF4444]' : ''}
-              // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
-              // icon={emailStatus === 'available' ? <Icons.Check stroke="#22C55E" /> : null}
-              // className={
-              //   errors.email || emailStatus === 'taken' ? 'border-[#EF4444]' : emailStatusStyle
-              // }
+                // THIS IS COMMENTED OUT BECAUSE THE API ENDPOINT FOR CHECKING EMAIL AVAILABILITY IS NOT YET IMPLEMENTED.
+                // icon={emailStatus === 'available' ? <Icons.Check stroke="#22C55E" /> : null}
+                // className={
+                //   errors.email || emailStatus === 'taken' ? 'border-[#EF4444]' : emailStatusStyle
+                // }
               />
               {errors.email && (
                 <p className="text-[#EF4444] text-xs mt-1">{errors.email.message}</p>
