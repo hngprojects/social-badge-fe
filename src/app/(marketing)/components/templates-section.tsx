@@ -90,7 +90,7 @@ const templates = [
 const Templates = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="relative w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 pb-10 mx-auto flex justify-center max-md:items-center flex-col">
+      <div className="relative w-full max-w-360 px-4 md:px-10 lg:px-30 pt-[54px] pb-10 mx-auto flex justify-center max-md:items-center flex-col">
         {/* Section category */}
         <div className="text-black/60 uppercase text-[11px] tracking-[1px] flex items-center gap-2">
           <span className="inline-block bg-primary rounded-full w-2 h-2" />
@@ -98,12 +98,12 @@ const Templates = () => {
         </div>
 
         {/* Section title */}
-        <h1 className="font-semibold text-[#525252] text-[clamp(2rem,6vw,4.5rem)] my-4 text-center md:text-left leading-[0.95]">
+        <h1 className="font-semibold text-[#525252] text-[clamp(2rem,6vw,4.5rem)] mt-4 mb-10 text-center md:text-left leading-[0.95]">
           Browse Template <span className="font-fraunces italic text-[#fa5424]">section</span>
         </h1>
 
         {/* Cards stack */}
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:grid-cols-4 gap-6 mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:grid-cols-4 gap-y-6 gap-x-[17px] mb-3">
           {templates.map((template, index) => (
             <div
               key={template.id}

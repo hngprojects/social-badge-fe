@@ -34,8 +34,8 @@ const BENEFITS_DATA = [
 const BenefitSection = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="py-12 md:px-6 md:py-24 max-w-360 px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="py-12 md:py-16 max-w-360 px-4 md:px-10 lg:px-30 mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-14">
           {/* RIGHT SIDE*/}
           <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
             {/* Header */}
@@ -49,14 +49,13 @@ const BenefitSection = () => {
 
               {/* Mobile Headline */}
               <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#525252] leading-tight font sans">
-                More <span className="italic text-[#FF4F11]  font-fraunces font-bold">reach.</span>{' '}
+                More <span className="italic text-[#FF693E]  font-fraunces font-bold">reach.</span>{' '}
                 Zero ad spend. No designer needed.
               </h2>
 
               {/* Desktop Headline */}
-              <h2 className="hidden lg:block text-[72px] md:text-6xl font-bold text-[#525252] leading-tight font sans">
-                Why would they <br />{' '}
-                <span className="italic text-[#FF4F11]  font-fraunces font-bold">share?</span>
+              <h2 className="hidden font-fraunces lg:block text-[48px] font-bold text-[#525252] leading-tight">
+                G <span className="italic text-[#FF693E]  font-fraunces font-bold">share?</span>
               </h2>
             </header>
 

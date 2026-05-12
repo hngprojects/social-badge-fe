@@ -7,6 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 
+const SOCIAL_LINKS = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/flaretagme/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/flaretagme/' },
+  { label: 'Facebook', href: 'https://web.facebook.com/profile.php?id=61589456016397' },
+  { label: 'X (Twitter) ', href: 'https://x.com/flaretagme' },
+] as const;
+
 const PRODUCT_LINKS = [
   { label: 'Features', href: '#feature-section' },
   { label: 'Pricing', href: '/pricing' },
@@ -122,7 +129,25 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-12 w-full lg:max-w-2xl">
+            {/* Socials */}
+            <div>
+              <h3 className="text-xs lg:text-base font-bold tracking-widest uppercase text-foreground mb-4">
+                Socials
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {SOCIAL_LINKS.map(({ label, href }, i) => (
+                  <li key={i}>
+                    <Link
+                      href={href}
+                      className="text-xs lg:text-sm text-foreground hover:text-primary transition-colors duration-150"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
             {/* Product */}
             <div>
               <h3 className="text-xs lg:text-base font-bold tracking-widest uppercase text-foreground mb-4">

@@ -6,13 +6,11 @@ import { LoginPayload } from '@/app/features/auth/types';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import { useForm } from 'react-hook-form';
 
 const Page = () => {
-  const { login } = useLogin();
-  const router = useRouter();
+  const { login, isLoading } = useLogin();
   const {
     register,
     handleSubmit,
@@ -21,17 +19,10 @@ const Page = () => {
 
   const onSubmit = (data: LoginPayload) => {
     console.log(data);
-    login(
-      {
-        email: data.email,
-        password: data.password,
-      },
-      {
-        onSuccess: () => {
-          router.push('/coming-soon');
-        },
-      },
-    );
+    login({
+      email: data.email,
+      password: data.password,
+    });
   };
 
   return (
@@ -85,8 +76,8 @@ const Page = () => {
             </div>
           </div>
 
-          <Button disabled={isSubmitting} type="submit">
-            {isSubmitting ? 'Logging in...' : 'Login'}
+          <Button disabled={isSubmitting || isLoading} type="submit">
+            {isLoading ? 'Logging in...' : 'Login'}
           </Button>
         </form>
 
