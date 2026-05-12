@@ -171,7 +171,7 @@ const Templates = () => {
           href="/explore"
         >
           <button className="flex items-center pt-3 justify-center gap-2 text-center transition underline font-medium cursor-pointer">
-         Explore More Templates
+            Explore More Templates
             <Image
               src="/assets/landing-page/icons/Arrow Right.svg"
               alt="Arrow"
