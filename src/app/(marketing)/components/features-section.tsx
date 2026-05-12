@@ -75,9 +75,9 @@ export default function Feature() {
                Mobile/Tablet : steps list → CTA button → visual (stacked)
                Desktop (lg+) : left column (steps) | right column (visual)
           ── */}
-          <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-stretch min-[900px]:justify-between gap-8 min-[900px]:gap-0 w-full transition-all duration-500">
+          <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-stretch min-[900px]:justify-between gap-8 min-[900px]:gap-6 w-full transition-all duration-500">
             {/* ── LEFT COLUMN: Step Menu ── */}
-            <div className="flex flex-col w-full min-[900px]:w-[48%] shrink-0 p-0 items-stretch">
+            <div className="flex flex-col w-full min-[900px]:w-[42%] shrink-0 p-0 items-stretch">
               {FEATURES.map((feature) => {
                 const isActive = activeId === feature.id;
                 return (
@@ -153,7 +153,7 @@ export default function Feature() {
             </div>
 
             {/* ── RIGHT COLUMN: Visual Stage ── */}
-            <div className="w-full min-[900px]:w-[42%] shrink-0 relative flex items-center justify-center overflow-visible">
+            <div className="w-full min-[900px]:w-[42%] shrink-0 flex items-stretch justify-center overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}
@@ -161,15 +161,14 @@ export default function Feature() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -24, scale: 0.97 }}
                   transition={{ duration: 0.45, type: 'spring', stiffness: 200, damping: 22 }}
-                  className="w-full flex justify-center"
+                  className="w-full h-full flex justify-center"
                 >
-                  <div className="w-full rounded-[24px] sm:rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
+                  <div className="w-full h-full relative min-h-105 sm:min-h-130 min-[900px]:min-h-75 overflow-hidden">
                     <Image
                       src={activeFeature.image as string}
                       alt={activeFeature.title}
-                      width={activeFeature.imageWidth}
-                      height={activeFeature.imageHeight}
-                      className="w-full h-auto object-contain"
+                      fill
+                      className="object-contain"
                       sizes="(max-width: 640px) 320px, (max-width: 1024px) 80vw, 752px"
                       priority={activeFeature.id === '01'}
                     />

@@ -44,7 +44,7 @@ export default function Hero() {
 
           {/* CTA BTNS */}
           <div className="w-full flex-col flex items-center md:flex-row gap-3.5 ">
-            <Button className="w-full font-light py-4! md:w-fit lg:py-6!" asChild>
+            <Button className=" w-3xs font-light py-4! md:w-fit lg:py-6!" asChild>
               <Link href="/signup">
                 Create Your First Badge{' '}
                 <Image
