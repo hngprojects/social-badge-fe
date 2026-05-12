@@ -9,13 +9,14 @@ const STATS = [
 const ExploreHero = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="relative max-w-[1376px] mx-auto overflow-hidden py-10 md:py-16 px-[16px]  md:px-[24px] lg:h-[600px]">
+      <div className="relative max-w-360 mx-auto overflow-hidden py-10 md:py-16 px-4 md:px-10 lg:px-30 lg:h-[600px]">
         <Image
           src="/assets/landing-page/social-badge-icon-1.png"
           alt=""
           width={400}
           height={400}
-          className="absolute -left-16 top-0 pointer-events-none select-none w-auto h-auto"
+          style={{ width: 'auto', height: 'auto' }}
+          className="absolute -left-10.5 top-0 pointer-events-none select-none"
           aria-hidden="true"
           loading="eager"
         />
@@ -24,7 +25,8 @@ const ExploreHero = () => {
           alt=""
           width={400}
           height={400}
-          className="absolute right-0 bottom-0 pointer-events-none select-none w-auto h-auto"
+          style={{ width: 'auto', height: 'auto' }}
+          className="absolute -right-10.5 bottom-0 pointer-events-none select-none"
           aria-hidden="true"
           loading="eager"
         />
@@ -72,25 +74,25 @@ const ExploreHero = () => {
           </div>
 
           {/* Right: Badge image */}
-          <div className="relative pb-5 justify-center min-[1150px]:min-h-[600px]">
+          <div className="flex items-center justify-center min-[1150px]:justify-end">
             <Image
-              src="/assets/landing-page/group-17.png"
+              src="/assets/landing-page/exploreHero.png"
               alt="Badge template previews"
               width={640}
               height={577}
-              className="absolute w-[640px] h-[577px] hidden min-[1150px]:flex max-w-none right-0 top-[30px] shrink-0"
+              style={{ width: '100%', height: 'auto' }}
+              className="hidden min-[1150px]:block"
               priority
             />
-            <div className="flex justify-center min-[1150px]:hidden">
-              <Image
-                src="/assets/landing-page/group-17-2.png"
-                alt="Badge template previews"
-                width={640}
-                height={577}
-                className="object-contain w-[640px] h-[577px]"
-                priority
-              />
-            </div>
+            <Image
+              src="/assets/landing-page/group17.png"
+              alt="Badge template previews"
+              width={640}
+              height={577}
+              style={{ width: '100%', height: 'auto' }}
+              className="block min-[1150px]:hidden object-contain"
+              priority
+            />
           </div>
         </div>
       </div>

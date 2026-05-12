@@ -99,7 +99,7 @@ const Templates = () => {
 
         {/* Section title */}
         <h1 className="font-semibold text-[#525252] text-[clamp(2rem,6vw,4.5rem)] mt-4 mb-10 text-center md:text-left leading-[0.95]">
-          Browse Template <span className="font-fraunces italic text-[#fa5424]">section</span>
+          Browse Template <span className="font-fraunces italic text-primary">section</span>
         </h1>
 
         {/* Cards stack */}
@@ -167,11 +167,11 @@ const Templates = () => {
 
         {/* Explore button */}
         <Link
-          className="flex justify-end cursor-pointer opacity-[0.85] transition hover:opacity-[1]"
+          className="flex justify-center cursor-pointer opacity-[0.85] transition hover:opacity-[1]"
           href="/explore"
         >
-          <button className="flex items-center justify-end gap-2 text-right transition underline font-medium cursor-pointer">
-            Explore more
+          <button className="flex items-center pt-3 justify-center gap-2 text-center transition underline font-medium cursor-pointer">
+            Explore More Templates
             <Image
               src="/assets/landing-page/icons/Arrow Right.svg"
               alt="Arrow"

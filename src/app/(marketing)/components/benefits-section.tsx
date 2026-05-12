@@ -41,7 +41,7 @@ const BenefitSection = () => {
             {/* Header */}
             <header className="space-y-4 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FF4F11]" />
+                <span className="w-2 h-2 rounded-full bg-primary" />
                 <span className="text-xs  uppercase tracking-[1.54px] text-[#7A7A7A] ">
                   Benefits
                 </span>
@@ -49,13 +49,14 @@ const BenefitSection = () => {
 
               {/* Mobile Headline */}
               <h2 className="block lg:hidden text-3xl md:text-4xl font-bold text-[#525252] leading-tight font sans">
-                More <span className="italic text-[#FF693E]  font-fraunces font-bold">reach.</span>{' '}
+                More <span className="italic text-primary font-fraunces font-bold">reach.</span>{' '}
                 Zero ad spend. No designer needed.
               </h2>
 
               {/* Desktop Headline */}
-              <h2 className="hidden font-fraunces lg:block text-[48px] font-bold text-[#525252] leading-tight">
-                G <span className="italic text-[#FF693E]  font-fraunces font-bold">share?</span>
+              <h2 className="hidden font-sans lg:block text-[48px] font-bold text-[#525252] leading-tight">
+                Why would they <br />
+                <span className="italic text-primary  font-fraunces font-bold">share?</span>
               </h2>
             </header>
 

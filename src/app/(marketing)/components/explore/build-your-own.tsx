@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const BuildYourOwn = () => {
   return (
-    <section className="py-16 px-[16px] md:px-[24px] flex items-center justify-center text-center md:border-t border-[#0A0A0A1A] max-w-[1376px] mx-auto">
+    <section className="py-16 px-4 md:px-10 lg:px-30 flex items-center justify-center text-center md:border-t border-[#0A0A0A1A] max-w-360 mx-auto">
       <div className="flex flex-col items-center gap-5">
         {/* Eyebrow */}
         <div className="text-[#8A8A85] uppercase text-[11px] tracking-[1.5px] flex items-center gap-2 md:mb-5">

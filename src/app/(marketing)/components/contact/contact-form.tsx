@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
-
 const contactSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
@@ -66,7 +65,7 @@ export default function ContactForm() {
   return (
     <div className="w-full lg:w-3/5 border border-[#EAEAE6] rounded-[14px] p-8 md:p-12">
       <div className="mb-5 gap-2.5 flex items-center">
-        <div className="bg-[#ff4f1f] rounded-full w-2 h-2 shrink-0" />
+        <div className="bg-primary rounded-full w-2 h-2 shrink-0" />
         <p className="text-[11px] font-light tracking-[1.54px] uppercase text-[#8A8A85]">
           Send a message
         </p>
@@ -183,7 +182,7 @@ export default function ContactForm() {
 
         <p className="text-center text-sm text-[#8A8A85]">
           By submitting you agree to our{' '}
-          <Link href="/privacy" className="text-[#fa5424]">
+          <Link href="/privacy" className="text-[#FF4F1F]">
             Privacy Policy
           </Link>
           . We never share your data.

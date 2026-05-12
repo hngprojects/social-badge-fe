@@ -104,11 +104,11 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
         {/* Header */}
         <div className="mb-16">
           <span className="inline-flex items-center gap-2 text-sm text-[11px] font-medium tracking-[1.54px]  text-[#7A7A7A] uppercase mb-8">
-            <span className="w-2 h-2 bg-[#ff4f1f] rounded-full"></span>
+            <span className="w-2 h-2 bg-primary rounded-full"></span>
             Feedback
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-sans font-semibold  text-[#3d3d3d]">
-            Organizers who <span className="italic text-[#fa5424] font-fraunces">get it.</span>
+            Organizers who <span className="italic text-primary font-fraunces">get it.</span>
           </h2>
         </div>
 
