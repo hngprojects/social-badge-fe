@@ -66,7 +66,10 @@ export default function Feature() {
             </div>
             <h2 className="font-semibold text-[clamp(32px,6vw,75px)] text-center md:text-left  sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-18.5 tracking-[-0.65px] text-[#525252]">
               Pre-event hype <br className="hidden sm:block" />
-              shouldn&apos;t be <span className="italic text-[#ff4f1f] font-fraunces">this</span> hard.
+              shouldn&apos;t be <span className="italic text-[#ff4f1f] font-fraunces">
+                this
+              </span>{' '}
+              hard.
             </h2>
           </div>
 
