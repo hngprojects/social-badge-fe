@@ -100,7 +100,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
 
   return (
     <section className="w-full bg-linear-to-b from-[#f5e6e0] to-[#f9ede8] py-10 px-4 min-h-149.75">
-      <div className="max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-360 px-4 md:px-10 lg:px-30 mx-auto">
         {/* Header */}
         <div className="mb-12">
           <span className="inline-flex items-center gap-2 text-sm text-[11px] font-medium tracking-[1.54px]  text-[#7A7A7A] uppercase mb-8">
@@ -114,7 +114,7 @@ export default function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: Te
 
         {/* Carousel Container */}
         <div className="relative ">
-          <div className="overflow-y-auto overflow-x-hidden scrollbar-hide md:overflow-hidden max-h-[600px] md:max-h-none">
+          <div className="overflow-y-auto overflow-x-hidden scrollbar-hide md:overflow-hidden max-h-150 md:max-h-none">
             <div
               className="flex flex-col md:flex-row md:transition-transform md:duration-500 md:ease-out gap-3"
               style={{

@@ -52,21 +52,21 @@ export default function Feature() {
   return (
     <section
       id="feature-section"
-      className="w-full py-12 sm:py-16 lg:py-24 bg-[#f9f9f9] overflow-hidden"
+      className="w-full py-12 sm:py-16 bg-[#F9F9F9] lg:py-24 overflow-hidden"
     >
-      <div className="mx-auto px-4 md:px-6 sm:px-6 lg:px-8  max-w-360">
+      <div className="mx-auto px-4 md:px-10 lg:px-30 max-w-360">
         <div className="w-full mx-auto">
           {/* ── Header ── */}
-          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 max-w-2xl">
+          <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 max-w-3xl items-center md:items-start">
             <div className="flex items-center gap-3">
               <div className="bg-[#ff4f1f] w-2 h-2 rounded-sm" />
               <span className="text-[11px] text-gray-400 tracking-[1.54px] uppercase">
                 FEATURES
               </span>
             </div>
-            <h2 className="font-fraunces font-semibold text-[32px] sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-18.5 tracking-[-0.65px] text-[#525252]">
+            <h2 className="font-semibold text-[clamp(32px,6vw,75px)] text-center md:text-left  sm:text-4xl md:text-5xl lg:text-[72px] leading-[1.1] lg:leading-18.5 tracking-[-0.65px] text-[#525252]">
               Pre-event hype <br className="hidden sm:block" />
-              shouldn&apos;t be <span className="italic text-[#ff4f1f]">this</span> hard.
+              shouldn&apos;t be <span className="italic text-[#ff4f1f] font-fraunces">this</span> hard.
             </h2>
           </div>
 
@@ -74,13 +74,9 @@ export default function Feature() {
                Mobile/Tablet : steps list → CTA button → visual (stacked)
                Desktop (lg+) : left column (steps) | right column (visual)
           ── */}
-          <div
-            className={`flex flex-col min-[900px]:flex-row justify-between gap-8 min-[900px]:gap-12 lg:gap-0 w-full transition-all duration-500 ${
-              activeId === '02' ? 'min-[900px]:items-center' : 'min-[900px]:items-start'
-            }`}
-          >
+          <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-stretch gap-8 min-[900px]:gap-5 w-full transition-all duration-500">
             {/* ── LEFT COLUMN: Step Menu ── */}
-            <div className="flex flex-col w-full min-[900px]:w-112.5 lg:w-148 shrink-0 p-0 items-stretch border-l border-[#e4beb1]/30">
+            <div className="flex flex-col w-full min-[900px]:flex-1 p-0 items-stretch">
               {FEATURES.map((feature) => {
                 const isActive = activeId === feature.id;
                 return (
@@ -156,7 +152,7 @@ export default function Feature() {
             </div>
 
             {/* ── RIGHT COLUMN: Visual Stage ── */}
-            <div className="w-full min-[900px]:flex-1 shrink-0 relative flex items-center min-[900px]:pt-12 justify-center overflow-visible">
+            <div className="w-full min-[900px]:flex-1 relative flex items-center justify-center overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}
@@ -166,15 +162,7 @@ export default function Feature() {
                   transition={{ duration: 0.45, type: 'spring', stiffness: 200, damping: 22 }}
                   className="w-full flex justify-center"
                 >
-                  <div
-                    className="
-        w-full
-        max-w-[320px] sm:max-w-[465px] lg:max-w-[752px]
-        rounded-[24px] sm:rounded-[32px] lg:rounded-[48px]
-        overflow-hidden
-        shadow-[0px_20px_40px_rgba(0,0,0,0.06)]
-      "
-                  >
+                  <div className="w-full rounded-[24px] sm:rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-[0px_20px_40px_rgba(0,0,0,0.06)]">
                     <Image
                       src={activeFeature.image as string}
                       alt={activeFeature.title}

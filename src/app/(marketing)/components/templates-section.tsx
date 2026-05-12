@@ -90,7 +90,7 @@ const templates = [
 const Templates = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="relative w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8 pb-10 mx-auto flex justify-center max-md:items-center flex-col">
+      <div className="relative w-full max-w-360 px-4 md:px-10 lg:px-30 pb-10 mx-auto flex justify-center max-md:items-center flex-col">
         {/* Section category */}
         <div className="text-black/60 uppercase text-[11px] tracking-[1px] flex items-center gap-2">
           <span className="inline-block bg-primary rounded-full w-2 h-2" />

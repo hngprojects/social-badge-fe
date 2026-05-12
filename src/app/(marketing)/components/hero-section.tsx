@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="max-w-360 mx-auto px-4 md:px-6 sm:px-6 lg:px-8  overflow-hidden  relative md:flex md:py-18">
+      <div className="max-w-360 mx-auto px-4 md:px-10 lg:px-30 overflow-hidden relative md:flex md:py-18">
         {/* BG FLOAT LOGO */}
         <Image
           src="/assets/landing-page/logo-float-low-bg.svg"
@@ -27,7 +27,7 @@ export default function Hero() {
         />
 
         {/* HEADER */}
-        <div className="flex flex-1 flex-col items-center pt-7.25 lg:max-w-150  md:items-start">
+        <div className="flex flex-1 flex-col items-center py-7.5 md:py-16 lg:py-35 lg:max-w-150 md:items-start">
           <div className=" mb-2 gap-2.5 flex items-center">
             <div className="bg-[#ff4f1f] rounded-full w-2 h-2"> </div>{' '}
             <p className="text-[11px] font-light tracking-[1.54px] ">FOR EVENT ORGANIZERS</p>

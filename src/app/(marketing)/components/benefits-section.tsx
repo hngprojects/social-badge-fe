@@ -34,7 +34,7 @@ const BENEFITS_DATA = [
 const BenefitSection = () => {
   return (
     <section className="bg-[#F9F9F9]">
-      <div className="py-12 md:px-6 md:py-24 max-w-360 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="py-12 md:py-24 max-w-360 px-4 md:px-10 lg:px-30 mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* RIGHT SIDE*/}
           <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
