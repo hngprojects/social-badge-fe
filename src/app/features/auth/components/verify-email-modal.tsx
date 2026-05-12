@@ -1,5 +1,9 @@
+'use client';
+
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { Button } from './button';
+import Link from 'next/link';
+import { Button, buttonVariants } from './button';
 
 export const VerifyEmailModal = () => {
   return (
@@ -15,8 +19,22 @@ export const VerifyEmailModal = () => {
           <div className="text-base text-[#4D4645]  ">
             <p>Great! Your email address has been verified</p>
           </div>
-          <Button>Set up profile</Button>
-          <Button variant="outline">Go to dashboard</Button>
+          <Button
+            type="button"
+            disabled
+            className="!cursor-not-allowed !bg-[#B8B3B2] !text-[#F5F5F5] hover:!bg-[#B8B3B2]"
+          >
+            Set up profile
+          </Button>
+          <Link
+            href="/coming-soon"
+            className={cn(
+              buttonVariants({ variant: 'outline' }),
+              'inline-flex w-full items-center justify-center no-underline',
+            )}
+          >
+            Go to dashboard
+          </Link>
         </div>
       </div>
     </div>

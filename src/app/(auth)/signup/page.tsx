@@ -7,6 +7,10 @@ import { useSignup } from '@/app/features/auth/hooks/useSignup';
 import { SignupPayload } from '@/app/features/auth/types';
 import { Icons } from '@/components/ui/icons';
 import { MiniSpinner } from '@/components/ui/mini-spinner';
+import {
+  hasPasswordSpecialCharacter,
+  PASSWORD_SPECIAL_CHAR_MESSAGE,
+} from '@/lib/validation/password';
 import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 
@@ -23,7 +27,7 @@ const Page = () => {
     control,
     formState: { errors, touchedFields, isSubmitting },
   } = useForm<SignupPayload>({ mode: 'onChange' });
-  const { signup } = useSignup();
+  const { signup, isLoading } = useSignup();
 
   const password = useWatch({
     control,
@@ -85,7 +89,7 @@ const Page = () => {
                   type="first-name"
                   placeholder="John"
                   label={'First Name'}
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isLoading}
                   icon={errors.first_name ? <Icons.InfoCircle /> : null}
                   className={errors.first_name ? 'border-[#EF4444]' : ''}
                 />
@@ -100,7 +104,7 @@ const Page = () => {
                   type="last-name"
                   placeholder="Doe"
                   label={'Last Name'}
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isLoading}
                   icon={errors.last_name ? <Icons.InfoCircle /> : null}
                   className={errors.last_name ? 'border-[#EF4444]' : ''}
                 />
@@ -127,7 +131,7 @@ const Page = () => {
                   // },
                 })}
                 type="email"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isLoading}
                 placeholder="usersocialbadge@hng.com"
                 label={'Email'}
                 id="email"
@@ -167,15 +171,14 @@ const Page = () => {
                       /\d/.test(value) || 'Password should have at least a number',
 
                     hasSpecialCharacter: (value) =>
-                      /[!@#$%^&*]/.test(value) ||
-                      'Password should have at least a special character',
+                      hasPasswordSpecialCharacter(value) || PASSWORD_SPECIAL_CHAR_MESSAGE,
 
                     minLength: (value) =>
                       value.length >= 6 || 'Password should be at least six characters',
                   },
                   required: 'Password is required',
                 })}
-                disabled={isSubmitting}
+                disabled={isSubmitting || isLoading}
                 type="password"
                 placeholder="***********"
                 label={'Password'}
@@ -199,7 +202,7 @@ const Page = () => {
                     required: 'Please confirm your password',
                     validate: (value) => value === password || 'Passwords do not match!',
                   })}
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isLoading}
                   type="password"
                   placeholder="***********"
                   label={'Confirm Password'}
@@ -223,7 +226,7 @@ const Page = () => {
                   className="h-3.5 w-3.5 rounded-[5px] border border-[#727272] accent-[#FA5424]"
                   name="remember-me"
                   id="remember-me"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isLoading}
                   onChange={(e) => setIsChecked(e.target.checked)}
                   checked={isChecked}
                 />
@@ -235,8 +238,8 @@ const Page = () => {
             </div>
           </div>
 
-          <Button type="submit" disabled={!isChecked || isSubmitting}>
-            {isSubmitting ? (
+          <Button type="submit" disabled={!isChecked || isSubmitting || isLoading}>
+            {isLoading ? (
               <>
                 {' '}
                 <MiniSpinner /> Signing up...{' '}

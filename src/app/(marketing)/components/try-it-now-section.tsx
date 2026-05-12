@@ -25,8 +25,8 @@ export default function TryItNow() {
   };
 
   return (
-    <section className="bg-[#f9f9f9]">
-      <div className="w-full max-w-360 px-4 md:px-6 sm:px-6 lg:px-8  mx-auto md:h-236 text-center md:text-left">
+    <section className="bg-[#f9f9f9] py-16 pb-20">
+      <div className="w-full max-w-360 px-4 md:px-10 lg:px-30 mx-auto text-center md:text-left">
         {/* Label */}
         <div className="flex items-center gap-2 mb-4 not-md:justify-center">
           <div className="w-2 h-2 bg-orange-600 rounded "></div>
@@ -36,17 +36,17 @@ export default function TryItNow() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
+        <h2 className="font-semibold text-[clamp(28px,5vw,72px)] leading-[1.03] tracking-[-0.65px] text-neutral-900">
           Make one. <span className="italic font-fraunces text-[#FF4F1F] ">right now.</span>
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-8 items-start mt-17.5 md:h-191.75">
-          <div className="w-full md:[576px] h-full">
-            <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-8 md:p-12 min-h-75 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)]">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 items-stretch mt-[70px]">
+          <div className="w-full md:w-[48%] shrink-0">
+            <div className="flex items-center justify-center bg-neutral-200 rounded-2xl p-6 md:p-8 min-h-60 md:h-full shadow-[0px_8px_16px_0px_rgba(0,0,0,0.06)]">
               <BadgePreview ref={previewRef} badge={badge} />
             </div>
           </div>
-          <div className="w-full h-full bg-white py-6 px-4 rounded-2xl ">
+          <div className="w-full md:w-[48%] shrink-0 bg-white py-5 px-4 rounded-2xl">
             <BadgeForm badge={badge} update={update} previewRef={previewRef} />
           </div>
         </div>
