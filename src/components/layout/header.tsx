@@ -85,7 +85,7 @@ export default function Header() {
                   href={href}
                   onClick={handleClick}
                   className={cn(
-                    'relative px-4 py-2 text-base font-medium rounded-lg',
+                    'relative px-4 py-2 text-base font-medium rounded-lg whitespace-nowrap',
                     'transition-colors duration-150',
                     isActive ? 'text-primary' : 'text-foreground hover:bg-muted',
                   )}
