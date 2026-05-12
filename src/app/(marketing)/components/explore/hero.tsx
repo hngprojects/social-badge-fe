@@ -72,22 +72,22 @@ const ExploreHero = () => {
           </div>
 
           {/* Right: Badge image */}
-          <div className="relative justify-center min-[1150px]:min-h-[600px]">
+          <div className="relative pb-5 justify-center min-[1150px]:min-h-[600px]">
             <Image
               src="/assets/landing-page/group-17.png"
               alt="Badge template previews"
-              width={750}
-              height={600}
-              className="absolute w-[690px] hidden min-[1150px]:flex max-w-none h-auto right-0 top-[30px] shrink-0"
+              width={640}
+              height={577}
+              className="absolute w-[640px] h-[577px] hidden min-[1150px]:flex max-w-none right-0 top-[30px] shrink-0"
               priority
             />
             <div className="flex justify-center min-[1150px]:hidden">
               <Image
                 src="/assets/landing-page/group-17-2.png"
                 alt="Badge template previews"
-                width={690}
-                height={600}
-                className="object-contain w-[690px] h-auto"
+                width={640}
+                height={577}
+                className="object-contain w-[640px] h-[577px]"
                 priority
               />
             </div>

@@ -53,9 +53,9 @@ export default function FAQ() {
   return (
     <section
       id="faq-section"
-      className="w-full md:max-w-5xl mx-auto px-4 md:px-10 lg:px-30 md:py-20 rouneded-none py-12 sm:py-16 lg:py-24"
+      className="w-full max-w-360 mx-auto px-4 md:px-10 lg:px-30 py-12 sm:py-16 lg:py-16"
     >
-      <div className="mb-10 md:mb-20 text-center">
+      <div className="mb-10 md:mb-[70px] text-center">
         <div className="font-sans tracking-widest text-muted-foreground text-[11px] items-center flex justify-center mb-6">
           <span className="inline-block h-2 w-2 rounded-full bg-primary mr-2 text-sm" />
           <span className="hidden md:block">FAQS</span>
@@ -72,7 +72,7 @@ export default function FAQ() {
       <Accordion
         type="single"
         collapsible
-        className="border-none"
+        className="border-none max-w-[880px] mx-auto"
         value={openId}
         onValueChange={setOpenId}
       >

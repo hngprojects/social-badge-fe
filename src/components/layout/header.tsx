@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const NAV_LINKS = [
+  { label: 'Home', href: '/' },
   { label: 'Explore', href: '/explore' },
   { label: 'Features', href: '/#feature-section' },
   { label: 'Pricing', href: '/pricing' },
@@ -37,7 +38,7 @@ export default function Header() {
           : 'border-b border-border shadow-sm',
       )}
     >
-      <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8 py-2">
+      <div className="mx-auto max-w-360 px-4 md:px-10 lg:px-30 py-2">
         <div className="flex h-17 items-center justify-between gap-6">
           {/* Logo */}
           <Link
