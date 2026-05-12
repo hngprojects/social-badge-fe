@@ -8,7 +8,7 @@ import { useForm, useWatch } from 'react-hook-form';
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false);
-  const { forgotPassword } = useForgotPassword();
+  const { forgotPassword, isLoading } = useForgotPassword();
   const {
     register,
     control,
@@ -43,7 +43,7 @@ const Page = () => {
           <form className=" flex flex-col gap-7" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-4">
               <AuthInput
-                disabled={isSubmitting}
+                disabled={isSubmitting || isLoading}
                 type="email"
                 placeholder="usersocialbadge@hng.com"
                 label={'Email'}
@@ -54,8 +54,8 @@ const Page = () => {
               )}
             </div>
 
-            <Button disabled={isSubmitting} type="submit">
-              {isSubmitting ? 'Sending reset link...' : 'Send Reset Link'}
+            <Button disabled={isSubmitting || isLoading} type="submit">
+              {isLoading ? 'Sending reset link...' : 'Send Reset Link'}
             </Button>
           </form>
 

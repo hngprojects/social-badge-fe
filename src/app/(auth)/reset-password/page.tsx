@@ -1,9 +1,14 @@
 'use client';
 import { AuthInput } from '@/app/features/auth/components/auth-input';
 import { useResetPassword } from '@/app/features/auth/hooks/useResetPassword';
+import {
+  hasPasswordSpecialCharacter,
+  PASSWORD_SPECIAL_CHAR_MESSAGE,
+} from '@/lib/validation/password';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import { useSearchParams } from 'next/navigation';
+import { toast } from 'sonner';
 import { useForm, useWatch } from 'react-hook-form';
 
 const Page = () => {
@@ -23,6 +28,9 @@ const Page = () => {
 
   const onSubmit = (data: { password: string; confirmPassword: string }) => {
     if (!token) {
+      toast.error(
+        'This page needs a valid reset link. Open the link from your password reset email, or request a new reset from the login page.',
+      );
       return;
     }
     resetPassword({
@@ -55,7 +63,7 @@ const Page = () => {
                       /[a-z]/.test(v) || 'Password should have at least a small letter',
                     hasNumber: (v) => /\d/.test(v) || 'Password should have at least a number',
                     hasSpecialCharacter: (v) =>
-                      /[!@#$%^&*]/.test(v) || 'Password should have at least a special character',
+                      hasPasswordSpecialCharacter(v) || PASSWORD_SPECIAL_CHAR_MESSAGE,
                     minLength: (v) => v.length >= 6 || 'Password should be at least six characters',
                   },
                 })}

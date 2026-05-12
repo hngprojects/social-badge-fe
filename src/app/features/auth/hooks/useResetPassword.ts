@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
+import { getAxiosApiErrorMessage } from '@/lib/api/error-message';
+import { isAxiosError } from 'axios';
 import { resetPassword as resetPasswordApi } from '../services/auth';
 import { toast } from 'sonner';
-import { AxiosError } from 'axios';
-import { ApiError } from '../types';
 
 export const useResetPassword = () => {
   const {
@@ -16,10 +16,12 @@ export const useResetPassword = () => {
       toast.success(data?.message || 'Password reset successful! You can now log in.');
     },
     onError: (error) => {
-      const axiosError = error as AxiosError<ApiError>;
-      const message =
-        axiosError.response?.data?.message || 'Failed to reset password. Please try again.';
-      toast.error(message);
+      const status = isAxiosError(error) ? error.response?.status : undefined;
+      const fallback =
+        status === 404 || status === 410 || status === 401
+          ? 'This reset link is invalid or has expired. Please request a new password reset from the login page.'
+          : 'Failed to reset password. Please try again.';
+      toast.error(getAxiosApiErrorMessage(error, fallback));
     },
   });
 

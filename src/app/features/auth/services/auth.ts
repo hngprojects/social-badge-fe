@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { apiClient } from '@/lib/api/client';
 import { LoginPayload, SignupPayload } from '../types';
 
@@ -8,10 +9,19 @@ export const signup = async (data: SignupPayload) => {
   });
 };
 export const login = async (data: LoginPayload) => {
-  return apiClient('/auth/login', {
-    method: 'POST',
-    data,
+  const { data: body } = await axios.post<{
+    status: string;
+    message: string;
+    data: {
+      access_token: string;
+      token_type?: string;
+      user: Record<string, unknown>;
+    };
+  }>('/api/auth/login', data, {
+    headers: { 'Content-Type': 'application/json' },
+    withCredentials: true,
   });
+  return body;
 };
 
 export const forgotPassword = async ({ email }: { email: string }) => {
