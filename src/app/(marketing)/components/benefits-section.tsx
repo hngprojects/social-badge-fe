@@ -55,8 +55,7 @@ const BenefitSection = () => {
 
               {/* Desktop Headline */}
               <h2 className="hidden font-fraunces lg:block text-[48px] font-bold text-[#525252] leading-tight">
-                G {' '}
-                <span className="italic text-[#FF693E]  font-fraunces font-bold">share?</span>
+                G <span className="italic text-[#FF693E]  font-fraunces font-bold">share?</span>
               </h2>
             </header>
 
